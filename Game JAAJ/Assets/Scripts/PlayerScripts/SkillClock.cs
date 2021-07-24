@@ -10,10 +10,10 @@ public class SkillClock : MonoBehaviour
 
     private float timerPonteiro;
 
-    Transform Ponteiro;
+    Transform ponteiro;
     void Start()
     {
-        Ponteiro = GameObject.Find("PonteiroPivot").GetComponent<Transform>();
+        ponteiro = GameObject.Find("PonteiroPivot").GetComponent<Transform>();
     }
 
     void Update()
@@ -25,7 +25,7 @@ public class SkillClock : MonoBehaviour
 
     void PonteiroUpdate()
     {
-        Ponteiro.eulerAngles = new Vector3(0, 0, -timerPonteiro);
+        ponteiro.eulerAngles = new Vector3(0, 0, -timerPonteiro);
 
         if (timerPonteiro >= 360)
         {
@@ -43,18 +43,26 @@ public class SkillClock : MonoBehaviour
                 skillPrimavera = true; 
                 skillOutono = false; 
                 skillInverno = false;
+
+                print("1");
             }
             else if (timerPonteiro <= 240) 
             {
                 skillPrimavera = false;
                 skillOutono = true;
                 skillInverno = false;
+
+                print("2");
+
             }
             else if (timerPonteiro <= 360)
             {
                 skillPrimavera = false;
                 skillOutono = false;
                 skillInverno = true;
+
+                print("3");
+
             }
         }       
     }

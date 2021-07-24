@@ -46,18 +46,17 @@ public class Movement : MonoBehaviour
     {
         if (!isRight && Input.GetKey(KeyCode.D) || !isRight && Input.GetKeyDown(KeyCode.RightArrow))
         {
-            //transform.Translate(Vector2.right * speed * Time.deltaTime);
             isRight = true;
             isLeft = false;
             transform.eulerAngles = new Vector2(0, 0);
         }
-        //Move Left
+    
         if (!isLeft && Input.GetKey(KeyCode.A) || !isLeft && Input.GetKeyDown(KeyCode.LeftArrow))
         {
             isRight = false;
             isLeft = true;
-            //transform.Translate(Vector2.right * speed * Time.deltaTime);
-            transform.eulerAngles = new Vector2(0, 180); //flip the character on its x axis
+ 
+            transform.eulerAngles = new Vector2(0, 180); 
         }
     }
 

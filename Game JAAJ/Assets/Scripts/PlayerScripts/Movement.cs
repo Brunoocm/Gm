@@ -44,14 +44,14 @@ public class Movement : MonoBehaviour
 
     void Flip()
     {
-        if (!isRight && Input.GetKey(KeyCode.D) || !isRight && Input.GetKeyDown(KeyCode.RightArrow))
+        if (move >= 0)
         {
             isRight = true;
 
             transform.eulerAngles = new Vector2(0, 0);
         }
     
-        if (isRight && Input.GetKey(KeyCode.A) || isRight && Input.GetKeyDown(KeyCode.LeftArrow))
+        if (move <= 0)
         {
             isRight = false;
  

@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
     public float speed;
     public float jump;
     public float jumping;
+    public float velocidadeAr;
 
     public float radius;
 
@@ -20,7 +21,6 @@ public class Movement : MonoBehaviour
     private bool isJumping;
     private bool isGrounded;
     private bool isRight;
-    private bool isLeft;
 
     Rigidbody2D rb;
     private void Start()
@@ -47,14 +47,13 @@ public class Movement : MonoBehaviour
         if (!isRight && Input.GetKey(KeyCode.D) || !isRight && Input.GetKeyDown(KeyCode.RightArrow))
         {
             isRight = true;
-            isLeft = false;
+
             transform.eulerAngles = new Vector2(0, 0);
         }
     
-        if (!isLeft && Input.GetKey(KeyCode.A) || !isLeft && Input.GetKeyDown(KeyCode.LeftArrow))
+        if (isRight && Input.GetKey(KeyCode.A) || isRight && Input.GetKeyDown(KeyCode.LeftArrow))
         {
             isRight = false;
-            isLeft = true;
  
             transform.eulerAngles = new Vector2(0, 180); 
         }
@@ -63,6 +62,7 @@ public class Movement : MonoBehaviour
     void Jump()
     {
         isGrounded = Physics2D.OverlapCircle(groundPos.position, radius, layerGround);
+
 
         if (isGrounded && Input.GetKeyDown(KeyCode.W) || isGrounded && Input.GetKeyDown(KeyCode.UpArrow))
         {

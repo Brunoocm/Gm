@@ -18,7 +18,6 @@ public class BasicAttack : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.X))
         {
 
-
             GameObject d = Instantiate(Bullet, shootPos.position, Quaternion.identity);
             d.GetComponent<Rigidbody2D>().velocity = transform.right * bulletSpeed;
 

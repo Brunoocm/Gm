@@ -7,12 +7,20 @@ public class SlimeBoss : MonoBehaviour
 {
     [Header("Idle")]
     [SerializeField] private bool idle;
+    public float timerBetweenSet;
+
+    private float timerBetween;
+    private int count;
 
     [Header("Spawn")]
     [SerializeField] private bool spawnEnemy;
-    public GameObject SlimePrefab;
+    public int slimesPerScene;
     public float timerSpawn;
+    public GameObject SlimePrefab;
+
     private float timerBase;
+    private int numSlimes;
+    GameObject[] ArraySlimes;
     Transform spawnPos;
    
 
@@ -20,6 +28,7 @@ public class SlimeBoss : MonoBehaviour
     [SerializeField] private bool jumpAttack;
     public float timerAir;
     public float speedAir;
+
     private float timerAirBase;
     private bool following;
     GameObject ShadowObj;
@@ -44,8 +53,63 @@ public class SlimeBoss : MonoBehaviour
 
     void Update()
     {
+        ChangeStages();
+
+        IdleFunction();
         SpawnFunction();
         JumpFunction();
+
+        ArraySlimes = GameObject.FindGameObjectsWithTag("MiniSlime");
+        for (int i = 0; i < ArraySlimes.Length; i++)
+        {
+            numSlimes = i;
+        }
+
+    }
+
+    void ChangeStages()
+    {
+       
+
+        if (idle)
+        {
+            timerBetween += Time.deltaTime;
+
+            if (timerBetween >= timerBetweenSet)
+            {
+                spawnEnemy = true;
+                idle = false;
+
+                timerBetween = 0;
+            }
+        }
+        //else if(spawnEnemy)
+        //{
+        //    if (timerBetween >= 10)
+        //    {
+        //        spawnEnemy = false;
+        //        jumpAttack = true;
+
+        //        timerBetween = 0;
+        //    }
+        //}
+        //else if(jumpAttack)
+        //{
+        //    if (timerBetween >= 10)
+        //    {
+        //        idle = true;
+        //        jumpAttack = false;
+
+        //        timerBetween = 0;
+        //    }
+        //}
+
+
+    }
+
+    void IdleFunction()
+    {
+
     }
 
     void SpawnFunction()
@@ -54,10 +118,18 @@ public class SlimeBoss : MonoBehaviour
         {
             timerSpawn -= Time.deltaTime;
 
-            if (timerSpawn <= 0)
+            if (timerSpawn <= 0 && numSlimes < slimesPerScene)
             {
                 GameObject slime = Instantiate(SlimePrefab, spawnPos.position, Quaternion.identity);
+                
                 timerSpawn = timerBase;
+            }
+            if(numSlimes >= slimesPerScene)
+            {
+                spawnEnemy = false;
+                jumpAttack = true;
+
+                timerBetween = 0;
             }
         }
 
@@ -96,6 +168,7 @@ public class SlimeBoss : MonoBehaviour
                 anim.SetTrigger("TriggerAttackFinal");
 
                 jumpAttack = false;
+                idle = true;
             }
         }
         else

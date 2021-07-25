@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1140099253172055574}
   m_Layer: 0
   m_Name: SlimeEnemy
-  m_TagString: Untagged
+  m_TagString: MiniSlime
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -10,7 +10,6 @@ public class SlimeBoss : MonoBehaviour
     public float timerBetweenSet;
 
     private float timerBetween;
-    private int count;
 
     [Header("Spawn")]
     [SerializeField] private bool spawnEnemy;
@@ -20,6 +19,7 @@ public class SlimeBoss : MonoBehaviour
 
     private float timerBase;
     private int numSlimes;
+    [SerializeField]private int count;
     GameObject[] ArraySlimes;
     Transform spawnPos;
    
@@ -55,7 +55,6 @@ public class SlimeBoss : MonoBehaviour
     {
         ChangeStages();
 
-        IdleFunction();
         SpawnFunction();
         JumpFunction();
 
@@ -70,7 +69,6 @@ public class SlimeBoss : MonoBehaviour
     void ChangeStages()
     {
        
-
         if (idle)
         {
             timerBetween += Time.deltaTime;
@@ -80,35 +78,11 @@ public class SlimeBoss : MonoBehaviour
                 spawnEnemy = true;
                 idle = false;
 
+                count = numSlimes;
+
                 timerBetween = 0;
             }
         }
-        //else if(spawnEnemy)
-        //{
-        //    if (timerBetween >= 10)
-        //    {
-        //        spawnEnemy = false;
-        //        jumpAttack = true;
-
-        //        timerBetween = 0;
-        //    }
-        //}
-        //else if(jumpAttack)
-        //{
-        //    if (timerBetween >= 10)
-        //    {
-        //        idle = true;
-        //        jumpAttack = false;
-
-        //        timerBetween = 0;
-        //    }
-        //}
-
-
-    }
-
-    void IdleFunction()
-    {
 
     }
 
@@ -118,16 +92,18 @@ public class SlimeBoss : MonoBehaviour
         {
             timerSpawn -= Time.deltaTime;
 
-            if (timerSpawn <= 0 && numSlimes < slimesPerScene)
+            if (timerSpawn <= 0 && count < slimesPerScene)
             {
-                GameObject slime = Instantiate(SlimePrefab, spawnPos.position, Quaternion.identity);
-                
+                Instantiate(SlimePrefab, spawnPos.position, Quaternion.identity);
+                count++;
                 timerSpawn = timerBase;
             }
-            if(numSlimes >= slimesPerScene)
+            if(numSlimes >= slimesPerScene || count >= slimesPerScene)
             {
                 spawnEnemy = false;
                 jumpAttack = true;
+
+                count = numSlimes;
 
                 timerBetween = 0;
             }
@@ -166,6 +142,8 @@ public class SlimeBoss : MonoBehaviour
                 ShadowObj.transform.position = newPos;        
 
                 anim.SetTrigger("TriggerAttackFinal");
+
+                count = numSlimes;
 
                 jumpAttack = false;
                 idle = true;

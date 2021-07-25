@@ -44,14 +44,14 @@ public class Movement : MonoBehaviour
 
     void Flip()
     {
-        if (move >= 0)
+        if (move > 0)
         {
             isRight = true;
 
             transform.eulerAngles = new Vector2(0, 0);
         }
     
-        if (move <= 0)
+        if (move < 0)
         {
             isRight = false;
  

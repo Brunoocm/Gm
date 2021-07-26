@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Wall
   - MiniSlime
+  - SlimeBoss
+  - Bullet
   layers:
   - Default
   - TransparentFX

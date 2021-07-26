@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7902492810058993896}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.2735849, g: 0.2735849, b: 0.2735849, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -144,3 +144,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9754c744244bd04409f15da4690ff8be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dano: 3
+  particle: {fileID: 8139867058744025537, guid: 72d31f29f8197f34bb81f6d3e8c49351, type: 3}

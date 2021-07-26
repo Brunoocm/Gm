@@ -23,9 +23,11 @@ public class Movement : MonoBehaviour
     private bool isRight;
 
     Rigidbody2D rb;
+    Animator anim;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         timerJump = jumping;
     }
 
@@ -34,11 +36,14 @@ public class Movement : MonoBehaviour
         Jump();
 
         Flip();
+
+        print(isGrounded);
     }
 
     void FixedUpdate()
     {
         move = Input.GetAxisRaw("Horizontal");
+        anim.SetFloat("SpeedMove", Mathf.Abs(move));
         rb.velocity = new Vector2(move * speed, rb.velocity.y);
     }
 
@@ -57,15 +62,29 @@ public class Movement : MonoBehaviour
  
             transform.eulerAngles = new Vector2(0, 180); 
         }
+
     }
 
     void Jump()
     {
         isGrounded = Physics2D.OverlapCircle(groundPos.position, radius, layerGround);
 
+        //if (isJumping) anim.SetBool("Jump", true);
+        //else anim.SetBool("Jump", false);
+
+        //if (isGrounded) anim.SetBool("Fall", false);
+
+
+        if(isGrounded)
+        {
+            anim.SetBool("Jump", false);
+            anim.SetBool("Fall", false);
+        }
+
 
         if (isGrounded && Input.GetKeyDown(KeyCode.W) || isGrounded && Input.GetKeyDown(KeyCode.UpArrow))
         {
+            anim.SetBool("Jump", true);
             isJumping = true;
             timerJump = jumping;
             rb.velocity = Vector2.up * jump;
@@ -80,12 +99,14 @@ public class Movement : MonoBehaviour
             }
             else
             {
+                anim.SetBool("Fall", true);
                 isJumping = false;
             }
         }
 
         if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
         {
+            anim.SetBool("Fall", true);
             isJumping = false;
         }
     }

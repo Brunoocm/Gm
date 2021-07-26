@@ -5,11 +5,15 @@ using UnityEngine;
 
 public class SlimeBoss : MonoBehaviour
 {
+    [Header("Health")]
+    public int health;
+
     [Header("Idle")]
     [SerializeField] private bool idle;
     public float timerBetweenSet;
 
     private float timerBetween;
+    private bool died;
 
     [Header("Spawn")]
     [SerializeField] private bool spawnEnemy;
@@ -36,6 +40,8 @@ public class SlimeBoss : MonoBehaviour
 
     Transform playerPos;
     Animator anim;
+
+    
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
@@ -47,23 +53,32 @@ public class SlimeBoss : MonoBehaviour
 
         timerBase = timerSpawn;
         timerAirBase = timerAir;
-
-
+   
     }
 
     void Update()
     {
-        ChangeStages();
-
-        SpawnFunction();
-        JumpFunction();
-
-        ArraySlimes = GameObject.FindGameObjectsWithTag("MiniSlime");
-        for (int i = 0; i < ArraySlimes.Length; i++)
+        if (!died)
         {
-            numSlimes = i;
+
+            ChangeStages();
+
+            SpawnFunction();
+            JumpFunction();
+
+            ArraySlimes = GameObject.FindGameObjectsWithTag("MiniSlime");
+            for (int i = 0; i < ArraySlimes.Length; i++)
+            {
+                numSlimes = i;
+            }
+
         }
 
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+            died = true;
+        }
     }
 
     void ChangeStages()
@@ -156,4 +171,12 @@ public class SlimeBoss : MonoBehaviour
             print("oi");
         }
     }
+
+    public void Dano(int dano)
+    {
+        health -= dano;
+    }
+
+
+
 }

@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class SlimeEnemy : MonoBehaviour
 {
+    public int health;
     public float speed;
 
     [SerializeField] private bool isRight;
     private bool jumping = true;
+    private bool died;
 
 
     Animator anim;
@@ -20,7 +23,16 @@ public class SlimeEnemy : MonoBehaviour
 
     void Update()
     {
-        Attack();
+        if (!died)
+        {
+            Attack();
+        }
+
+        if(health <=0)
+        {
+            Destroy(gameObject);
+            died = true;
+        }
     }
 
     void Attack()
@@ -56,4 +68,10 @@ public class SlimeEnemy : MonoBehaviour
         }
 
     }
+
+    public void Dano(int dano)
+    {
+        health -= dano;
+    }
+
 }

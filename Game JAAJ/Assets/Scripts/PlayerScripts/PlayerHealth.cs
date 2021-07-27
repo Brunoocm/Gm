@@ -77,6 +77,13 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-       
+        if (other.gameObject.CompareTag("SlimeBoss") || other.gameObject.CompareTag("MiniSlime"))
+        {
+            if (!getHit)
+            {
+                health--;
+                getHit = true;
+            }
+        }
     }
 }

@@ -127,11 +127,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  idle: 1
-  timerBetweenSet: 3.5
-  spawnEnemy: 0
+  idle: 0
+  timerBetweenSet: 3
+  spawnEnemy: 1
   slimesPerScene: 2
-  timerSpawn: 4
+  timerSpawn: 2
   SlimePrefab: {fileID: 1140099253172055568, guid: 2231a02e4380d804089c03b019fb99c5, type: 3}
   count: 0
   jumpAttack: 0

@@ -15,4 +15,18 @@ public class PlayerHealth : MonoBehaviour
     {
         
     }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        //PegarBumerangueVelocidade
+        if (Mathf.Abs(other.relativeVelocity.x) > 10.5f)
+        {
+            if (other.gameObject.CompareTag("Bumerangue"))
+            {
+
+            }
+
+        }
+        //PegarBumerangueVelocidade
+    }
 }

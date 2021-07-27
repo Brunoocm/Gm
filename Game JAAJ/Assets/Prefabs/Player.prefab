@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86455e825e88e1f4aaac5013497c937b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 10
+  bulletSpeed: 15
   Bullet: {fileID: 7993682240961373249, guid: 22c3047273e353a4abafce1026087309, type: 3}
 --- !u!95 &3034621512619904019
 Animator:

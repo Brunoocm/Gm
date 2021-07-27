@@ -31,6 +31,14 @@ public class BulletScript : MonoBehaviour
             Instantiate(particle, transform.position, Quaternion.identity);
 
             Destroy(gameObject);
+        }  
+        if (other.gameObject.CompareTag("Golem"))
+        {
+            other.gameObject.GetComponent<GolemBoss>().Dano(dano);
+            Instantiate(particle, transform.position, Quaternion.identity);
+
+            Destroy(gameObject);
         }
+
     }
 }

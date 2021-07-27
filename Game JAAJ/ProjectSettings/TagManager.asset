@@ -8,6 +8,8 @@ TagManager:
   - MiniSlime
   - SlimeBoss
   - Bullet
+  - Soco
+  - Golem
   layers:
   - Default
   - TransparentFX

@@ -18,24 +18,24 @@ public class BulletScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("SlimeBoss"))
+        ParticleSystem particlesystem = Instantiate(particle, transform.position, Quaternion.identity);
+        Destroy(particlesystem, 1.5f);
+
+        if (other.gameObject.CompareTag("SlimeBoss"))
         {
             other.gameObject.GetComponent<SlimeBoss>().Dano(dano);
-            Instantiate(particle, transform.position, Quaternion.identity);
-
+        
             Destroy(gameObject);
         }
         if (other.gameObject.CompareTag("MiniSlime"))
         {
             other.gameObject.GetComponent<SlimeEnemy>().Dano(dano);
-            Instantiate(particle, transform.position, Quaternion.identity);
 
             Destroy(gameObject);
         }  
         if (other.gameObject.CompareTag("Golem"))
         {
             other.gameObject.GetComponent<GolemBoss>().Dano(dano);
-            Instantiate(particle, transform.position, Quaternion.identity);
 
             Destroy(gameObject);
         }

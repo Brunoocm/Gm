@@ -168,7 +168,7 @@ public class SlimeBoss : MonoBehaviour
         {
             anim.SetBool("Attack", false);
             timerAir = timerAirBase;
-            print("oi");
+
         }
     }
 

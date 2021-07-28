@@ -44,7 +44,6 @@ public class SkillClock : MonoBehaviour
                 skillOutono = false; 
                 skillInverno = false;
 
-                print("1");
             }
             else if (timerPonteiro <= 240) 
             {
@@ -52,7 +51,7 @@ public class SkillClock : MonoBehaviour
                 skillOutono = true;
                 skillInverno = false;
 
-                print("2");
+
 
             }
             else if (timerPonteiro <= 360)
@@ -61,7 +60,6 @@ public class SkillClock : MonoBehaviour
                 skillOutono = false;
                 skillInverno = true;
 
-                print("3");
 
             }
         }       

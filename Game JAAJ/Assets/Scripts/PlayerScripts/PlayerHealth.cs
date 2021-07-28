@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
@@ -12,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     private bool getHit;
     private bool loop;
 
+    Rigidbody2D rb;
     SpriteRenderer sprite;
     Material mat;
     Color alpha;
@@ -19,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
     {
         sprite = GetComponent<SpriteRenderer>();
         alpha = sprite.GetComponent<SpriteRenderer>().color;
+        rb = GetComponent<Rigidbody2D>();
 
         timerCdBase = timerCd;
 
@@ -78,6 +81,8 @@ public class PlayerHealth : MonoBehaviour
             {
                 health--;
                 getHit = true;
+
+                MaterialHit();
             }
         }
     }
@@ -91,10 +96,16 @@ public class PlayerHealth : MonoBehaviour
                 health--;
                 getHit = true;
 
-                mat.EnableKeyword("CONTRAST_ON");
-                mat.SetFloat("_Contrast", 2.5f);
-                mat.SetFloat("_Brightness", -0.7f);
+                MaterialHit();
+                
             }
         }
+    }
+
+    void MaterialHit()
+    {
+        mat.EnableKeyword("CONTRAST_ON");
+        mat.SetFloat("_Contrast", 2.5f);
+        mat.SetFloat("_Brightness", -0.7f);
     }
 }

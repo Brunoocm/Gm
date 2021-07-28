@@ -82,7 +82,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.2169623, y: 3.8000002}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -106,7 +106,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 11.96, y: 12.25}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 2.2169623, y: 3.8000002}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
   timerBetweenSet: 3
   spawnEnemy: 1
   slimesPerScene: 2
-  timerSpawn: 2
+  timerSpawn: 1
   SlimePrefab: {fileID: 1140099253172055568, guid: 2231a02e4380d804089c03b019fb99c5, type: 3}
   count: 0
   jumpAttack: 0

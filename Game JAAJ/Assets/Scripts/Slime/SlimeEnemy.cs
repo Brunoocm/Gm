@@ -9,7 +9,7 @@ public class SlimeEnemy : MonoBehaviour
     public float speed;
 
     [SerializeField] private bool isRight;
-    private bool jumping = true;
+    [HideInInspector] public bool jumping = true;
     private bool died;
 
 
@@ -39,14 +39,7 @@ public class SlimeEnemy : MonoBehaviour
     {
         if(jumping)
         {
-            if (isRight)
-            {
-                rb.velocity = transform.right * speed;
-            }
-            else
-            {
-                rb.velocity = transform.right * speed;
-            }
+            rb.velocity = transform.right * speed;
         }
 
     }

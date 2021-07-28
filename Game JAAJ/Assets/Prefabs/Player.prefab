@@ -235,9 +235,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerSpeed: 15
   powerCooldown: 3
-  autumnPower: {fileID: 7993682240961373249, guid: 22c3047273e353a4abafce1026087309, type: 3}
-  winterPower: {fileID: 7993682240961373249, guid: 22c3047273e353a4abafce1026087309, type: 3}
-  springPower: {fileID: 7993682240961373249, guid: 22c3047273e353a4abafce1026087309, type: 3}
+  autumnPower: {fileID: 7993682240961373249, guid: 732c321f3e5c9774db9008a065b7b9b4, type: 3}
+  winterPower: {fileID: 7993682240961373249, guid: 732c321f3e5c9774db9008a065b7b9b4, type: 3}
+  springPower: {fileID: 7993682240961373249, guid: 732c321f3e5c9774db9008a065b7b9b4, type: 3}
 --- !u!95 &3034621512619904019
 Animator:
   serializedVersion: 3

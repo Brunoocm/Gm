@@ -8,7 +8,7 @@ public class BasicAttack : MonoBehaviour
     public GameObject Bullet;
 
     Animator anim;
-    Transform shootPos;
+    [HideInInspector] public Transform shootPos;
     void Start()
     {
         shootPos = GameObject.Find("ShootPos").GetComponent<Transform>();

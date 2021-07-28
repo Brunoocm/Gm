@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 433495359133280722}
   - component: {fileID: 3859389632421574859}
   - component: {fileID: 3859389632421574856}
+  - component: {fileID: 3616790480381331707}
   - component: {fileID: 3034621512619904019}
   m_Layer: 0
   m_Name: Player
@@ -219,6 +220,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 15
   Bullet: {fileID: 7993682240961373249, guid: 22c3047273e353a4abafce1026087309, type: 3}
+  shootPos: {fileID: 0}
+--- !u!114 &3616790480381331707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3859389632421574857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd125856bdff7934ca398f3d820a3e2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerSpeed: 15
+  powerCooldown: 3
+  autumnPower: {fileID: 7993682240961373249, guid: 22c3047273e353a4abafce1026087309, type: 3}
+  winterPower: {fileID: 7993682240961373249, guid: 22c3047273e353a4abafce1026087309, type: 3}
+  springPower: {fileID: 7993682240961373249, guid: 22c3047273e353a4abafce1026087309, type: 3}
 --- !u!95 &3034621512619904019
 Animator:
   serializedVersion: 3

@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     private bool loop;
 
     SpriteRenderer sprite;
+    Material mat;
     Color alpha;
     void Start()
     {
@@ -21,11 +22,13 @@ public class PlayerHealth : MonoBehaviour
 
         timerCdBase = timerCd;
 
+
+        mat = sprite.material;
     }
 
     void Update()
-    {      
-        if(getHit)
+    {
+        if (getHit)
         {
             timerCd -= Time.deltaTime;
             if(timerCd <= 0)
@@ -58,9 +61,13 @@ public class PlayerHealth : MonoBehaviour
         {
             alpha.a = 1f;
             sprite.color = alpha;
+
+            mat.DisableKeyword("CONTRAST_ON");
+            mat.SetFloat("_Contrast", 1f);
+            mat.SetFloat("_Brightness", 0f);
         }
 
-     
+
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -83,6 +90,10 @@ public class PlayerHealth : MonoBehaviour
             {
                 health--;
                 getHit = true;
+
+                mat.EnableKeyword("CONTRAST_ON");
+                mat.SetFloat("_Contrast", 2.5f);
+                mat.SetFloat("_Brightness", -0.7f);
             }
         }
     }

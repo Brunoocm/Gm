@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Profiling;
 using UnityEngine;
+using TMPro;
 
 public class SkillClock : MonoBehaviour
 {
     public float speedPonteiro;
+    public TextMeshProUGUI name;
+
     public static bool skillPrimavera, skillOutono, skillInverno; 
 
     private float timerPonteiro;
@@ -46,6 +49,8 @@ public class SkillClock : MonoBehaviour
                 skillOutono = false; 
                 skillInverno = false;
 
+                name.text = "Primavera";
+
                 print("primavera");
             }
             else if (timerPonteiro <= 240 && timerPonteiro >= 120 && skillPrimavera) 
@@ -54,6 +59,8 @@ public class SkillClock : MonoBehaviour
                 skillOutono = true;
                 skillInverno = false;
 
+                name.text = "Outono";
+
                 print("outono");
             }
             else if (timerPonteiro <= 360 && timerPonteiro >= 240 && skillOutono)
@@ -61,6 +68,8 @@ public class SkillClock : MonoBehaviour
                 skillPrimavera = false;
                 skillOutono = false;
                 skillInverno = true;
+
+                name.text = "Inverno";
 
                 print("inverno");
             }

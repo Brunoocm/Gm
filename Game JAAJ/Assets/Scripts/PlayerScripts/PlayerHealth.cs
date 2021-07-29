@@ -2,11 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
     public int health;
+    public int numOfHearts;
     public float timerCd;
+
+    public Image[] hearts;
+    public Sprite fullHeart;
+    public Sprite emptyHeart;
 
     private float timerCdBase;
     [SerializeField]private float timerAlpha;
@@ -31,16 +37,47 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
+        Invulnerable();
+
+        if(health > numOfHearts)
+        {
+            health = numOfHearts;
+        }
+
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if(i < health)
+            {
+                hearts[i].sprite = fullHeart;
+            }
+            else
+            {
+                hearts[i].sprite = emptyHeart;
+            }
+
+            if(i < numOfHearts)
+            {
+                hearts[i].enabled = true;
+            }
+            else
+            {
+                hearts[i].enabled = false;
+            }
+        }
+    }
+
+    void Invulnerable()
+    {
         if (getHit)
         {
             timerCd -= Time.deltaTime;
-            if(timerCd <= 0)
+            if (timerCd <= 0)
             {
                 getHit = false;
                 timerCd = timerCdBase;
             }
-         
-            if(!loop && timerAlpha <= 1.5f && timerAlpha > 0.4f)
+
+            if (!loop && timerAlpha <= 1.5f && timerAlpha > 0.4f)
             {
                 timerAlpha -= Time.deltaTime * 1.5f;
             }
@@ -48,11 +85,11 @@ public class PlayerHealth : MonoBehaviour
             {
                 loop = true;
             }
-            if(loop)
+            if (loop)
             {
                 timerAlpha += Time.deltaTime * 1.5f;
             }
-            if(loop && timerAlpha >= 1)
+            if (loop && timerAlpha >= 1)
             {
                 loop = false;
             }
@@ -70,7 +107,13 @@ public class PlayerHealth : MonoBehaviour
             mat.SetFloat("_Brightness", 0f);
         }
 
+    }
 
+    void MaterialHit()
+    {
+        mat.EnableKeyword("CONTRAST_ON");
+        mat.SetFloat("_Contrast", 2.5f);
+        mat.SetFloat("_Brightness", -0.7f);
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -97,15 +140,8 @@ public class PlayerHealth : MonoBehaviour
                 getHit = true;
 
                 MaterialHit();
-                
+
             }
         }
-    }
-
-    void MaterialHit()
-    {
-        mat.EnableKeyword("CONTRAST_ON");
-        mat.SetFloat("_Contrast", 2.5f);
-        mat.SetFloat("_Brightness", -0.7f);
     }
 }

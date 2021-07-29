@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SlimeBoss : MonoBehaviour
 {
     [Header("Health")]
     public int health;
+    public Slider slide;
 
     [Header("Idle")]
     [SerializeField] private bool idle;
@@ -53,7 +55,8 @@ public class SlimeBoss : MonoBehaviour
 
         timerBase = timerSpawn;
         timerAirBase = timerAir;
-   
+
+        slide.maxValue = health;
     }
 
     void Update()
@@ -71,6 +74,8 @@ public class SlimeBoss : MonoBehaviour
             {
                 numSlimes = i;
             }
+
+            slide.value = health;
 
         }
 

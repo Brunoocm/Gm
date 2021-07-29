@@ -185,7 +185,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 6
+  numOfHearts: 6
   timerCd: 2
+  hearts: []
+  fullHeart: {fileID: 21300000, guid: 03bd63b8d334deb41907de431191b875, type: 3}
+  emptyHeart: {fileID: 21300000, guid: 49a2746554aafb344948c10b7663ad5f, type: 3}
   timerAlpha: 1
 --- !u!114 &3859389632421574859
 MonoBehaviour:
@@ -287,11 +291,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93d491348a2857a42b72e0cd1cacbe2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
   SalaEsquerda: {fileID: 0}
   SalaMeio: {fileID: 0}
   SalaDireita: {fileID: 0}
+  LuzEsquerda: {fileID: 0}
+  LuzDireita: {fileID: 0}
+  Hatch: {fileID: 0}
+  HealthSlime: {fileID: 0}
+  HealthGolem: {fileID: 0}
   cam: {fileID: 0}
+  paredes: {fileID: 0}
 --- !u!1 &3859389632534532825
 GameObject:
   m_ObjectHideFlags: 0

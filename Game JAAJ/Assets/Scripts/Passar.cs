@@ -11,6 +11,8 @@ public class Passar : MonoBehaviour
     public GameObject LuzEsquerda;
     public GameObject LuzDireita;
     public GameObject Hatch;
+    public GameObject HealthSlime;
+    public GameObject HealthGolem;
 
     public Camera cam;
 
@@ -50,6 +52,7 @@ public class Passar : MonoBehaviour
             {
                 paredes.SetActive(true);
                 SalaEsquerda.SetActive(true);
+                HealthSlime.SetActive(true);
             }
         }
         else if(other.name == "MeioCollider")
@@ -64,6 +67,7 @@ public class Passar : MonoBehaviour
             {
                 paredes.SetActive(true);
                 SalaDireita.SetActive(true);
+                HealthGolem.SetActive(true);
             }
         }
     }
@@ -75,6 +79,7 @@ public class Passar : MonoBehaviour
             if (primeiroBoss)
             {
                 paredes.SetActive(false);
+                HealthSlime.SetActive(false);
             }
         }
         if (other.name == "DireitaCollider")
@@ -82,6 +87,7 @@ public class Passar : MonoBehaviour
             if (segundoBoss)
             {
                 paredes.SetActive(false);
+                HealthGolem.SetActive(false);
             }
         }
     }

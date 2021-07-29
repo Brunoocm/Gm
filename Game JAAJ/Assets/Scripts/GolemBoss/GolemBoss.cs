@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class GolemBoss : MonoBehaviour
 {
     [Header("Vida")]
     public int health;
     public float timerChange;
+    public Slider slide;
     private float timerChangeBase;
     private bool isDead;
 
@@ -41,6 +42,9 @@ public class GolemBoss : MonoBehaviour
 
         isDead = true;
         StartCoroutine(wait());
+
+        slide.maxValue = health;
+        slide.value = health;
     }
 
 
@@ -49,9 +53,12 @@ public class GolemBoss : MonoBehaviour
         if (!isDead)
         {
             AttackFunction();
+
+            slide.value = health;
+
         }
 
-        if(health <= 0)
+        if (health <= 0)
         {
             Passar.segundoBoss = true;
             Destroy(gameObject, 0.1f);

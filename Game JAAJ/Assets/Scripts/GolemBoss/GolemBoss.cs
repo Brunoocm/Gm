@@ -39,6 +39,8 @@ public class GolemBoss : MonoBehaviour
         timerAirBase = timerAir;
         timerChangeBase = timerChange;
 
+        isDead = true;
+        StartCoroutine(wait());
     }
 
 
@@ -141,5 +143,9 @@ public class GolemBoss : MonoBehaviour
         health -= dano;
     }
 
-
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(2f);
+        isDead = false;
+    }
 }

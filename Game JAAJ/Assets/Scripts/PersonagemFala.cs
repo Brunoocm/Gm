@@ -28,17 +28,13 @@ public class PersonagemFala : MonoBehaviour
 
     void Update()
     {
-        print(index);
 
         if(display.text == sentences[index])
         {
             
-            if(index == 2)
+            if(index == 2 && SkillClock.skillInverno)
             {
-                if (Input.GetKeyDown(KeyCode.LeftShift))
-                {
-                    NextSentence();
-                }
+                NextSentence();
             } 
             else if(index == 4)
             {
@@ -51,7 +47,7 @@ public class PersonagemFala : MonoBehaviour
             else if(index == 5)
             {
             }
-            else
+            else if(index != 2)
             {
                 if (Input.GetKeyDown(KeyCode.X))
                 {

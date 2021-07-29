@@ -10,6 +10,7 @@ public class Passar : MonoBehaviour
 
     public GameObject LuzEsquerda;
     public GameObject LuzDireita;
+    public GameObject Hatch;
 
     public Camera cam;
 
@@ -36,7 +37,7 @@ public class Passar : MonoBehaviour
         }
         if(segundoBoss && primeiroBoss)
         {
-
+            Hatch.SetActive(false);
         }
     }
 

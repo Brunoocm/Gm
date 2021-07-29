@@ -35,14 +35,6 @@ public class SlimeEnemy : MonoBehaviour
             died = true;
         }
 
-        if (rb.velocity.magnitude <= 0)
-        {
-            print("a");
-        }
-        if (rb.velocity.magnitude >= 0)
-        {
-            print("2");
-        }
     }
 
     void Attack()

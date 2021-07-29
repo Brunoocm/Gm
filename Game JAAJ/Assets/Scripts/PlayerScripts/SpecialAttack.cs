@@ -6,7 +6,9 @@ public class SpecialAttack : MonoBehaviour
 {
     public float powerSpeed, powerCooldown;
     public GameObject autumnPower, winterPower, springPower;
+    public ParticleSystem particle;
 
+    private bool isParticle;
     float cooldownTime;
     Animator anim;
     GameObject seasonPower;
@@ -14,6 +16,7 @@ public class SpecialAttack : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        cooldownTime = powerCooldown;
     }
 
     void Update()
@@ -24,16 +27,23 @@ public class SpecialAttack : MonoBehaviour
             {
                 Shoot();
             }
+            if (isParticle)
+            {
+                Instantiate(particle, transform.position, Quaternion.identity);
+                isParticle = false;
+            }
         }
         else
         {
             cooldownTime += Time.deltaTime;
+            isParticle = true;
+
         }
     }
 
     void Shoot()
     {
-        GameObject b = Instantiate(SeasonPower(), GetComponent<BasicAttack>().shootPos.position, Quaternion.identity);
+        GameObject b = Instantiate(SeasonPower(), GetComponent<BasicAttack>().shootPos.position, GetComponent<BasicAttack>().shootPos.rotation);
         b.GetComponent<Rigidbody2D>().velocity = transform.right * powerSpeed;
 
 

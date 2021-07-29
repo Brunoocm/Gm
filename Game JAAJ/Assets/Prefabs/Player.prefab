@@ -241,10 +241,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerSpeed: 15
-  powerCooldown: 3
-  autumnPower: {fileID: 7993682240961373249, guid: 732c321f3e5c9774db9008a065b7b9b4, type: 3}
-  winterPower: {fileID: 7993682240961373249, guid: 732c321f3e5c9774db9008a065b7b9b4, type: 3}
+  powerCooldown: 15
+  autumnPower: {fileID: 7993682240961373249, guid: ed69d5813bc930849a411ddae5850266, type: 3}
+  winterPower: {fileID: 7993682240961373249, guid: e0c01b16ac13b1b4d82fe2b8ddcafdac, type: 3}
   springPower: {fileID: 7993682240961373249, guid: 732c321f3e5c9774db9008a065b7b9b4, type: 3}
+  particle: {fileID: 4282568617096948606, guid: cc8fd41fbe61b594c81c0bf1d1ab9dbe, type: 3}
 --- !u!95 &3034621512619904019
 Animator:
   serializedVersion: 3

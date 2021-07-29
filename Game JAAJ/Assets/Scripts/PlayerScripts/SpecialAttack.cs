@@ -20,7 +20,7 @@ public class SpecialAttack : MonoBehaviour
     {
         if(cooldownTime >= powerCooldown)
         {
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.C))
             {
                 Shoot();
             }

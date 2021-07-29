@@ -76,7 +76,8 @@ public class SlimeBoss : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Passar.primeiroBoss = true;
+            Destroy(gameObject, 0.2f);
             died = true;
         }
     }

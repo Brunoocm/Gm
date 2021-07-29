@@ -51,7 +51,8 @@ public class GolemBoss : MonoBehaviour
 
         if(health <= 0)
         {
-            Destroy(gameObject);
+            Passar.segundoBoss = true;
+            Destroy(gameObject, 0.1f);
             isDead = true;
         }
     }

@@ -17,13 +17,17 @@ public class BasicAttack : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X))
         {
-
-            GameObject d = Instantiate(Bullet, shootPos.position, Quaternion.identity);
-            d.GetComponent<Rigidbody2D>().velocity = transform.right * bulletSpeed;
-
-            anim.SetTrigger("Shoot");
+            Shoot();
         }
+    }
+
+    public void Shoot()
+    {
+        GameObject d = Instantiate(Bullet, shootPos.position, Quaternion.identity);
+        d.GetComponent<Rigidbody2D>().velocity = transform.right * bulletSpeed;
+
+        anim.SetTrigger("Shoot");
     }
 }

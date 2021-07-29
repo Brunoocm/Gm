@@ -43,7 +43,13 @@ public class SlimeBoss : MonoBehaviour
     Transform playerPos;
     Animator anim;
 
-    
+    private void Awake()
+    {
+        if(Passar.primeiroBoss)
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();

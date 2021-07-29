@@ -226,7 +226,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 15
   Bullet: {fileID: 7993682240961373249, guid: 22c3047273e353a4abafce1026087309, type: 3}
-  shootPos: {fileID: 0}
+  anim: {fileID: 3034621512619904019}
+  shootPos: {fileID: 3859389633441674180}
 --- !u!114 &3616790480381331707
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
@@ -63,6 +64,12 @@ public class PlayerHealth : MonoBehaviour
             {
                 hearts[i].enabled = false;
             }
+        }
+
+        if(health <= 0)
+        {
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene("Principal");
         }
     }
 

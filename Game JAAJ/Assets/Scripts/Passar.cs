@@ -50,10 +50,10 @@ public class Passar : MonoBehaviour
             cam.transform.position = new Vector3 (SalaEsquerda.transform.position.x, SalaEsquerda.transform.position.y, cam.transform.position.z);
             if(!primeiroBoss)
             {
-                paredes.SetActive(true);
-                SalaEsquerda.SetActive(true);
+                paredes.SetActive(true);               
                 HealthSlime.SetActive(true);
             }
+            SalaEsquerda.SetActive(true);
         }
         else if(other.name == "MeioCollider")
         {
@@ -66,9 +66,9 @@ public class Passar : MonoBehaviour
             if (!segundoBoss)
             {
                 paredes.SetActive(true);
-                SalaDireita.SetActive(true);
                 HealthGolem.SetActive(true);
             }
+            SalaDireita.SetActive(true);
         }
     }
 

@@ -31,7 +31,13 @@ public class GolemBoss : MonoBehaviour
     Transform playerPos;
     Animator anim;
 
-
+    private void Awake()
+    {
+        if (Passar.segundoBoss)
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();

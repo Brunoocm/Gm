@@ -7,12 +7,11 @@ public class BasicAttack : MonoBehaviour
     public float bulletSpeed;
     public GameObject Bullet;
 
-    Animator anim;
-    [HideInInspector] public Transform shootPos;
+    public Animator anim;
+    public Transform shootPos;
     void Start()
     {
-        shootPos = GameObject.Find("ShootPos").GetComponent<Transform>();
-        anim = GetComponent<Animator>();
+
     }
 
     void Update()

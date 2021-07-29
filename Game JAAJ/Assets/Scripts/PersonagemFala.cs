@@ -15,43 +15,50 @@ public class PersonagemFala : MonoBehaviour
 
     public UnityEvent acaba; 
 
-    public UnityEvent atacar; 
+    public UnityEvent atacar;
+
+    public static bool finishTutorial;
     void Start()
     {
-        m_MyEvent.Invoke();
-     
-        falaPersonagem.SetActive(true);
+        if (!finishTutorial)
+        {
+            m_MyEvent.Invoke();
 
-        StartCoroutine(Type());
+            falaPersonagem.SetActive(true);
+
+            StartCoroutine(Type());
+        }
 
     }
 
     void Update()
     {
-
-        if(display.text == sentences[index])
+        if (!finishTutorial)
         {
-            
-            if(index == 2 && SkillClock.skillInverno)
+            if (display.text == sentences[index])
             {
-                NextSentence();
-            } 
-            else if(index == 4)
-            {
-                if (Input.GetKeyDown(KeyCode.X))
+
+                if (index == 2 && SkillClock.skillInverno)
                 {
                     NextSentence();
-                    atacar.Invoke();
                 }
-            }  
-            else if(index == 5)
-            {
-            }
-            else if(index != 2)
-            {
-                if (Input.GetKeyDown(KeyCode.X))
+                else if (index == 4)
                 {
-                    NextSentence();
+                    if (Input.GetKeyDown(KeyCode.X))
+                    {
+                        NextSentence();
+                        atacar.Invoke();
+                    }
+                }
+                else if (index == 5)
+                {
+                }
+                else if (index != 2)
+                {
+                    if (Input.GetKeyDown(KeyCode.X))
+                    {
+                        NextSentence();
+                    }
                 }
             }
         }
@@ -59,16 +66,20 @@ public class PersonagemFala : MonoBehaviour
 
     void NextSentence()
     {
-        if(index < sentences.Length - 1)
+        if (!finishTutorial)
         {
-            index++;
-            display.text = "";
-            StartCoroutine(Type());
-        }
-        else
-        {
-            display.text = "";
-            acaba.Invoke();
+            if (index < sentences.Length - 1)
+            {
+                index++;
+                display.text = "";
+                StartCoroutine(Type());
+            }
+            else
+            {
+                display.text = "";
+                acaba.Invoke();
+                finishTutorial = true;
+            }
         }
     }
 

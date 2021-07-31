@@ -7,13 +7,19 @@ using TMPro;
 public class SkillClock : MonoBehaviour
 {
     public float speedPonteiro;
-    public TextMeshProUGUI name;
 
-    public static bool skillPrimavera, skillOutono, skillInverno; 
+    public static bool skillPrimavera, skillOutono, skillInverno;
 
-    private float timerPonteiro;
+    [Header("icone")]
+    public GameObject iconeImagePrimavera;
+    public GameObject iconeImageOutono;
+    public GameObject iconeImageInverno;
+
+
+    [SerializeField]private float timerPonteiro;
 
     Transform ponteiro;
+
     void Start()
     {
         ponteiro = GameObject.Find("PonteiroPivot").GetComponent<Transform>();
@@ -41,38 +47,42 @@ public class SkillClock : MonoBehaviour
             timerPonteiro += speedPonteiro;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            if (timerPonteiro <= 120 && skillInverno) 
-            {
-                skillPrimavera = true; 
-                skillOutono = false; 
-                skillInverno = false;
-
-                name.text = "Primavera";
-
-                print("primavera");
-            }
-            else if (timerPonteiro <= 240 && timerPonteiro >= 120 && skillPrimavera) 
+        //if (Input.GetKeyDown(KeyCode.Z))
+        //{
+            if (timerPonteiro <= 120 && skillPrimavera  ) 
             {
                 skillPrimavera = false;
                 skillOutono = true;
                 skillInverno = false;
 
-                name.text = "Outono";
+                iconeImageOutono.SetActive(true);
+                iconeImagePrimavera.SetActive(false);
+                iconeImageInverno.SetActive(false);
 
-                print("outono");
+
+ 
             }
-            else if (timerPonteiro <= 360 && timerPonteiro >= 240 && skillOutono)
+            else if (timerPonteiro <= 240 && timerPonteiro >= 120 && skillOutono  ) 
             {
+
                 skillPrimavera = false;
                 skillOutono = false;
                 skillInverno = true;
 
-                name.text = "Inverno";
-
-                print("inverno");
+                iconeImageInverno.SetActive(true);
+                iconeImagePrimavera.SetActive(false);
+                iconeImageOutono.SetActive(false);
             }
-        }       
+            else if (timerPonteiro <= 360 && timerPonteiro >= 240 && skillInverno  )
+            {
+                skillPrimavera = true;
+                skillOutono = false;
+                skillInverno = false;
+
+                iconeImagePrimavera.SetActive(true);
+                iconeImageOutono.SetActive(false);
+                iconeImageInverno.SetActive(false);
+            }
+        //}       
     }
 }

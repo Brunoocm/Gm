@@ -188,8 +188,8 @@ MonoBehaviour:
   numOfHearts: 6
   timerCd: 2
   hearts: []
-  fullHeart: {fileID: 21300000, guid: 03bd63b8d334deb41907de431191b875, type: 3}
-  emptyHeart: {fileID: 21300000, guid: 49a2746554aafb344948c10b7663ad5f, type: 3}
+  fullHeart: {fileID: 21300000, guid: 8f9ec37b33ce1b84eb0b0760bdbdf1af, type: 3}
+  emptyHeart: {fileID: 21300000, guid: 179a9f9843263184ea93a74071be4983, type: 3}
   timerAlpha: 1
 --- !u!114 &3859389632421574859
 MonoBehaviour:
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerSpeed: 15
-  powerCooldown: 10
+  powerCooldown: 5
   autumnPower: {fileID: 7993682240961373249, guid: ed69d5813bc930849a411ddae5850266, type: 3}
   winterPower: {fileID: 7993682240961373249, guid: e0c01b16ac13b1b4d82fe2b8ddcafdac, type: 3}
   springPower: {fileID: 7993682240961373249, guid: 732c321f3e5c9774db9008a065b7b9b4, type: 3}

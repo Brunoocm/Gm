@@ -78,7 +78,10 @@ public class Movement : MonoBehaviour
         if(isGrounded)
         {
             anim.SetBool("Jump", false);
-            anim.SetBool("Fall", false);
+        }
+        else
+        {
+            anim.SetBool("Jump", true);
         }
 
 
@@ -94,19 +97,18 @@ public class Movement : MonoBehaviour
         {
             if (timerJump > 0)
             {
+                anim.SetBool("Jump", true);
                 rb.velocity = Vector2.up * jump;
                 timerJump -= Time.deltaTime;
             }
             else
             {
-                anim.SetBool("Fall", true);
                 isJumping = false;
             }
         }
 
         if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
         {
-            anim.SetBool("Fall", true);
             isJumping = false;
         }
     }

@@ -10,6 +10,8 @@ TagManager:
   - Bullet
   - Soco
   - Golem
+  - Shield
+  - UltimoBoss
   layers:
   - Default
   - TransparentFX

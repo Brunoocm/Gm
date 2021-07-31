@@ -37,6 +37,18 @@ public class BulletScript : MonoBehaviour
             other.gameObject.GetComponent<GolemBoss>().Dano(dano);
             particles();
             Destroy(gameObject);
+        }  
+        if (other.gameObject.CompareTag("Shield"))
+        {
+            other.gameObject.transform.parent.GetComponent<UltimoBoss>().DanoShield(dano);
+            particles();
+            Destroy(gameObject);
+        } 
+        if (other.gameObject.CompareTag("UltimoBoss"))
+        {
+            other.gameObject.transform.GetComponent<UltimoBoss>().Dano(dano);
+            particles();
+            Destroy(gameObject);
         } 
         if (other.gameObject.CompareTag("Wall"))
         {

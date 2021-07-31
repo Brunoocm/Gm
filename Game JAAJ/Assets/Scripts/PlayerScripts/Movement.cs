@@ -22,6 +22,7 @@ public class Movement : MonoBehaviour
     private bool isGrounded;
     private bool isRight;
 
+   
     Rigidbody2D rb;
     Animator anim;
     private void Start()

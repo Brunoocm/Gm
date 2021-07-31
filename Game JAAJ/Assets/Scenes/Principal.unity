@@ -1947,6 +1947,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &603751683 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3034621512619904019, guid: 2bd753e65a2799349bcf4e05e4e6303b, type: 3}
+  m_PrefabInstance: {fileID: 1293224576}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &628206296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3394,11 +3399,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3859389632421574871, guid: 2bd753e65a2799349bcf4e05e4e6303b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.7
+      value: -6.48
       objectReference: {fileID: 0}
     - target: {fileID: 3859389632421574871, guid: 2bd753e65a2799349bcf4e05e4e6303b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.4
+      value: -4.53
       objectReference: {fileID: 0}
     - target: {fileID: 3859389632421574871, guid: 2bd753e65a2799349bcf4e05e4e6303b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4034,6 +4039,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedPonteiro: 0.5
+  playerAnim: {fileID: 603751683}
+  Primavera: {fileID: 9100000, guid: 183bb3179947a7d428de5622d045268a, type: 2}
+  Outono: {fileID: 9100000, guid: b2529e8acea74d64aa5cbcafa97c0793, type: 2}
+  Inverno: {fileID: 9100000, guid: dd93c1f1b10a96949bc75673b596ee6a, type: 2}
   iconeImagePrimavera: {fileID: 2125394092}
   iconeImageOutono: {fileID: 1135740924}
   iconeImageInverno: {fileID: 1730040914}

@@ -10,6 +10,12 @@ public class SkillClock : MonoBehaviour
 
     public static bool skillPrimavera, skillOutono, skillInverno;
 
+    [Header("Animacao")]
+    public Animator playerAnim;
+    public RuntimeAnimatorController Primavera;
+    public RuntimeAnimatorController Outono;
+    public RuntimeAnimatorController Inverno;
+
     [Header("icone")]
     public GameObject iconeImagePrimavera;
     public GameObject iconeImageOutono;
@@ -22,6 +28,7 @@ public class SkillClock : MonoBehaviour
 
     void Start()
     {
+        
         ponteiro = GameObject.Find("PonteiroPivot").GetComponent<Transform>();
         skillOutono = true;
     }
@@ -59,8 +66,8 @@ public class SkillClock : MonoBehaviour
                 iconeImagePrimavera.SetActive(false);
                 iconeImageInverno.SetActive(false);
 
+                 playerAnim.runtimeAnimatorController = Outono;
 
- 
             }
             else if (timerPonteiro <= 240 && timerPonteiro >= 120 && skillOutono  ) 
             {
@@ -72,7 +79,9 @@ public class SkillClock : MonoBehaviour
                 iconeImageInverno.SetActive(true);
                 iconeImagePrimavera.SetActive(false);
                 iconeImageOutono.SetActive(false);
-            }
+
+                playerAnim.runtimeAnimatorController = Inverno;
+        }
             else if (timerPonteiro <= 360 && timerPonteiro >= 240 && skillInverno  )
             {
                 skillPrimavera = true;
@@ -82,6 +91,10 @@ public class SkillClock : MonoBehaviour
                 iconeImagePrimavera.SetActive(true);
                 iconeImageOutono.SetActive(false);
                 iconeImageInverno.SetActive(false);
+
+                
+                playerAnim.runtimeAnimatorController = Primavera;
+
             }
         //}       
     }

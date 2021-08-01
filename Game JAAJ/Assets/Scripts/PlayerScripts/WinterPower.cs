@@ -12,8 +12,6 @@ public class WinterPower : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        Invoke("EndWinter", 5);
     }
 
     void Update()
@@ -23,7 +21,9 @@ public class WinterPower : MonoBehaviour
 
     void Freeze()
     {
-        if(frostEnemy != null)
+        FindObjectOfType<ScriptAudioManager>().Play("inverno");
+
+        if (frostEnemy != null)
         {
             frostEnemy.GetComponent<Animator>().speed = 0;
 
@@ -36,6 +36,9 @@ public class WinterPower : MonoBehaviour
 
             //change material
         }
+
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
     }
 
     void EndWinter()

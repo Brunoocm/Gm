@@ -27,6 +27,8 @@ public class BasicAttack : MonoBehaviour
         GameObject d = Instantiate(Bullet, shootPos.position, Quaternion.identity);
         d.GetComponent<Rigidbody2D>().velocity = transform.right * bulletSpeed;
 
+        FindObjectOfType<ScriptAudioManager>().Play("estilingue"); 
+
         anim.SetTrigger("Shoot");
     }
 }

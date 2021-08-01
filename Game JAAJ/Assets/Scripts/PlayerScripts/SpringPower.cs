@@ -11,6 +11,8 @@ public class SpringPower : MonoBehaviour
     PlayerHealth healthScript;
     void Start()
     {
+        FindObjectOfType<ScriptAudioManager>().Play("primavera");
+
         rb = GetComponent<Rigidbody2D>();
         healthScript = GameObject.Find("Player").GetComponent<PlayerHealth>();
         Destroy(gameObject, 1f);

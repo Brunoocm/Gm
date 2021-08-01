@@ -156,6 +156,11 @@ public class GolemBoss : MonoBehaviour
         health -= dano;
     }
 
+    public void SomSoco()
+    {
+        FindObjectOfType<ScriptAudioManager>().Play("soco");
+    }
+
     IEnumerator wait()
     {
         yield return new WaitForSeconds(2f);

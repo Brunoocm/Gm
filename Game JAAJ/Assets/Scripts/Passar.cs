@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Passar : MonoBehaviour
 {
+    public string bossRoom;
+
     public GameObject SalaEsquerda;
     public GameObject SalaMeio;  
     public GameObject SalaDireita;
@@ -31,11 +34,11 @@ public class Passar : MonoBehaviour
     {
         if(primeiroBoss)
         {
-            LuzEsquerda.SetActive(true);
+            LuzEsquerda.SetActive(false);
         }
         if(segundoBoss)
         {
-            LuzDireita.SetActive(true);
+            LuzDireita.SetActive(false);
         }
         if(segundoBoss && primeiroBoss)
         {
@@ -69,6 +72,10 @@ public class Passar : MonoBehaviour
                 HealthGolem.SetActive(true);
             }
             SalaDireita.SetActive(true);
+        }
+        else if(other.name == "HatchTrigger")
+        {
+            SceneManager.LoadScene(bossRoom);
         }
     }
 

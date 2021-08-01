@@ -37,8 +37,6 @@ public class Movement : MonoBehaviour
         Jump();
 
         Flip();
-
-        print(isGrounded);
     }
 
     void FixedUpdate()
@@ -92,6 +90,8 @@ public class Movement : MonoBehaviour
             isJumping = true;
             timerJump = jumping;
             rb.velocity = Vector2.up * jump;
+
+            FindObjectOfType<ScriptAudioManager>().Play("jump");
         }
 
         if (isJumping && Input.GetKey(KeyCode.W) || isJumping && Input.GetKey(KeyCode.UpArrow))

@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Principal.unity
     guid: 934fc44aaf406e14a9a835d9b32f179c
+  - enabled: 1
+    path: Assets/Scenes/Principal2.unity
+    guid: bc8ca0279e3d57141a1b85b610eed7dc
+  - enabled: 1
+    path: Assets/Scenes/EnemyTest.unity
+    guid: f5a09c28c169b9c4aab3906bfb897f03
   m_configObjects: {}

@@ -11,6 +11,8 @@ public class AutumnPower : MonoBehaviour
 
     void Start()
     {
+        FindObjectOfType<ScriptAudioManager>().Play("outono");
+
         rb = GetComponent<Rigidbody2D>();
 
         Invoke("EndAutumn", 6);

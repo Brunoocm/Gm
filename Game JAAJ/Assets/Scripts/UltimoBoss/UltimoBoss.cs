@@ -162,7 +162,7 @@ public class UltimoBoss : MonoBehaviour
             timerChuva -= Time.deltaTime;
             if (timerChuva <= 0)
             {
-                int num = Random.Range(0, chuvaObj.Length - 1);
+                int num = Random.Range(0, chuvaObj.Length);
 
                 GameObject bolaFogo = Instantiate(bullet, chuvaObj[num].position, Quaternion.identity);
                 GameObject s = Instantiate(sombra, sombraObj[num].position, Quaternion.identity);

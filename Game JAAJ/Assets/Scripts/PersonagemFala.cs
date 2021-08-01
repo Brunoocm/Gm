@@ -38,11 +38,11 @@ public class PersonagemFala : MonoBehaviour
             if (display.text == sentences[index])
             {
 
-                if (index == 2 && SkillClock.skillInverno)
-                {
-                    NextSentence();
-                }
-                else if (index == 4)
+                //if (index == 2 && SkillClock.skillInverno)
+                //{
+                //    NextSentence();
+                //}
+                if (index == 4)
                 {
                     if (Input.GetKeyDown(KeyCode.X))
                     {
@@ -50,16 +50,20 @@ public class PersonagemFala : MonoBehaviour
                         atacar.Invoke();
                     }
                 }
-                else if (index == 5)
-                {
-                }
-                else if (index != 2)
+                else
                 {
                     if (Input.GetKeyDown(KeyCode.X))
                     {
                         NextSentence();
                     }
                 }
+                //else if (index > 4)
+                //{
+                //    if (Input.GetKeyDown(KeyCode.X))
+                //    {
+                //        NextSentence();
+                //    }
+                //}
             }
         }
     }

@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class UltimoBoss : MonoBehaviour
 {
     [Header("Main")]
     public int health;
+    public Slider slider;
     public bool isIdle;
     public bool isLava;
     public bool isChuva;
@@ -51,7 +53,9 @@ public class UltimoBoss : MonoBehaviour
     {
         coll = GetComponent<BoxCollider2D>();
         timerBtw = 0;
-      
+
+
+        slider.maxValue = health;
     }
 
     void Update()
@@ -64,6 +68,10 @@ public class UltimoBoss : MonoBehaviour
             Destroy(gameObject);
 
             SceneManager.LoadScene("FINAL");
+        }
+        else
+        {
+            slider.value = health;
         }
 
         if (shieldHealth >= 0)

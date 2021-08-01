@@ -23,7 +23,9 @@ public class UltimoBoss : MonoBehaviour
 
     [Header("Poder Chuva")]
     public Transform[] chuvaObj;
+    public Transform[] sombraObj;
     public GameObject bullet;
+    public GameObject sombra;
     public float timerChuva;
     private float timerBaseChuva;
 
@@ -153,8 +155,10 @@ public class UltimoBoss : MonoBehaviour
                 int num = Random.Range(0, chuvaObj.Length - 1);
 
                 GameObject bolaFogo = Instantiate(bullet, chuvaObj[num].position, Quaternion.identity);
+                GameObject s = Instantiate(sombra, sombraObj[num].position, Quaternion.identity);
                 bolaFogo.GetComponent<Rigidbody2D>().velocity = transform.up * -15;
-                Destroy(bolaFogo, 3f);
+                Destroy(bolaFogo, 1.25f);
+                Destroy(s, 1.3f);
 
                 timerChuva = timerBaseChuva;
                 

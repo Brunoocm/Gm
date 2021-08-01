@@ -14,6 +14,7 @@ public class Passar : MonoBehaviour
     public GameObject LuzEsquerda;
     public GameObject LuzDireita;
     public GameObject Hatch;
+    public GameObject HatchAberto;
     public GameObject HealthSlime;
     public GameObject HealthGolem;
 
@@ -43,6 +44,7 @@ public class Passar : MonoBehaviour
         if(segundoBoss && primeiroBoss)
         {
             Hatch.SetActive(false);
+            HatchAberto.SetActive(true);
         }
     }
 

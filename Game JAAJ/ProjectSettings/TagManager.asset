@@ -13,6 +13,7 @@ TagManager:
   - Shield
   - UltimoBoss
   - Dano
+  - chao
   layers:
   - Default
   - TransparentFX

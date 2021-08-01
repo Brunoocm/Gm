@@ -40,10 +40,7 @@ public class ScriptAudioManager : MonoBehaviour
             Debug.LogWarning("Som: " + name + " não encontrado!");
             return;
         }
-        else
-        {
-            print("tocou " + name);
-        }
+
         s.source.Play();
     }
 }

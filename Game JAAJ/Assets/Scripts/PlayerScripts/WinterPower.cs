@@ -39,6 +39,8 @@ public class WinterPower : MonoBehaviour
 
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
+
+        Invoke("EndWinter", 2);
     }
 
     void EndWinter()

@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
+    public static int savedHealth = 6;
     private float timerCdBase;
     [SerializeField]private float timerAlpha;
     private bool getHit;
@@ -26,6 +27,9 @@ public class PlayerHealth : MonoBehaviour
     Color alpha;
     void Start()
     {
+        print(savedHealth);
+        health = savedHealth;
+
         sprite = GetComponent<SpriteRenderer>();
         alpha = sprite.GetComponent<SpriteRenderer>().color;
         rb = GetComponent<Rigidbody2D>();
@@ -68,8 +72,17 @@ public class PlayerHealth : MonoBehaviour
 
         if(health <= 0)
         {
+            savedHealth = 6;
             Scene scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene("Principal2");
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if(health > 0)
+        {
+            savedHealth = health;
         }
     }
 

@@ -8,21 +8,17 @@ public class Menu : MonoBehaviour
     public static bool gamePaused = false;
     public GameObject pauseMenu;
 
-    public bool nao;
     private void Update()
     {
-        if (!nao)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (gamePaused)
             {
-                if (gamePaused)
-                {
-                    Resume();
-                }
-                else
-                {
-                    Pause();
-                }
+                Resume();
+            }
+            else
+            {
+                Pause();
             }
         }
     }
@@ -41,7 +37,7 @@ public class Menu : MonoBehaviour
         gamePaused = true;
     }
 
-    public void Voltar()
+    public void VoltarMenu()
     {
         SceneManager.LoadScene("Menu");
         pauseMenu.SetActive(false);
@@ -49,19 +45,8 @@ public class Menu : MonoBehaviour
         gamePaused = false;
     }
 
-    public void Play()
-    {
-        StartCoroutine(delay());
-    }
-
     public void Quit()
     {
         Application.Quit();
-    }
-
-    IEnumerator delay()
-    {
-        yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

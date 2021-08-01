@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class UltimoBoss : MonoBehaviour
@@ -62,6 +63,7 @@ public class UltimoBoss : MonoBehaviour
         {
             Destroy(gameObject);
 
+            SceneManager.LoadScene("FINAL");
         }
 
         if (shieldHealth >= 0)

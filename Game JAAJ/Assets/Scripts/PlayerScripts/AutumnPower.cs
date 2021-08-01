@@ -14,13 +14,24 @@ public class AutumnPower : MonoBehaviour
         FindObjectOfType<ScriptAudioManager>().Play("outono");
 
         rb = GetComponent<Rigidbody2D>();
-
-        Invoke("EndAutumn", 6);
     }
 
     void Update()
     {
         //
+    }
+
+    void StartAutumn()
+    {
+        anchoredEnemy.GetComponent<DistanceJoint2D>().enabled = true;
+        anchoredEnemy.GetComponent<DistanceJoint2D>().connectedBody = rb;
+
+        if (anchoredEnemy.GetComponent<SlimeEnemy>() != null)
+        {
+            anchoredEnemy.GetComponent<SlimeEnemy>().jumping = false;
+        }
+
+        Invoke("EndAutumn", 3);
     }
 
     void EndAutumn()
@@ -48,18 +59,7 @@ public class AutumnPower : MonoBehaviour
         {
             anchoredEnemy = collision.gameObject;
 
-            collision.GetComponent<DistanceJoint2D>().enabled = true;
-            collision.GetComponent<DistanceJoint2D>().connectedBody = rb;
-
-            if(collision.GetComponent<SlimeEnemy>() != null)
-            {
-                collision.GetComponent<SlimeEnemy>().jumping = false;
-            }
-        }
-
-        if (collision.gameObject.CompareTag("Wall"))
-        {
-            EndAutumn();
+            StartAutumn();
         }
     }
 }

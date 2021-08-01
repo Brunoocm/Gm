@@ -144,5 +144,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9754c744244bd04409f15da4690ff8be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dano: 3
+  dano: 2
   particle: {fileID: 8139867058744025537, guid: 72d31f29f8197f34bb81f6d3e8c49351, type: 3}

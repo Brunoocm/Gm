@@ -6,6 +6,8 @@ using TMPro;
 
 public class SkillClock : MonoBehaviour
 {
+    public GameObject changeSeasonFX;
+
     public float speedPonteiro;
 
     public static bool skillPrimavera, skillOutono, skillInverno;
@@ -51,12 +53,12 @@ public class SkillClock : MonoBehaviour
         }
         else
         {
-            timerPonteiro += speedPonteiro;
+            timerPonteiro += speedPonteiro * Time.timeScale;
         }
 
         //if (Input.GetKeyDown(KeyCode.Z))
         //{
-            if (timerPonteiro <= 120 && skillPrimavera  ) 
+            if (timerPonteiro <= 120 && skillPrimavera) 
             {
                 skillPrimavera = false;
                 skillOutono = true;
@@ -66,7 +68,7 @@ public class SkillClock : MonoBehaviour
                 iconeImagePrimavera.SetActive(false);
                 iconeImageInverno.SetActive(false);
 
-                 playerAnim.runtimeAnimatorController = Outono;
+                playerAnim.runtimeAnimatorController = Outono;
 
             }
             else if (timerPonteiro <= 240 && timerPonteiro >= 120 && skillOutono  ) 
@@ -81,7 +83,7 @@ public class SkillClock : MonoBehaviour
                 iconeImageOutono.SetActive(false);
 
                 playerAnim.runtimeAnimatorController = Inverno;
-        }
+            }
             else if (timerPonteiro <= 360 && timerPonteiro >= 240 && skillInverno  )
             {
                 skillPrimavera = true;

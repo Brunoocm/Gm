@@ -45,7 +45,7 @@ public class WinterPower : MonoBehaviour
     {
         if (frostEnemy != null)
         {
-            frostEnemy.GetComponent<Animator>().speed = 1;
+               frostEnemy.GetComponent<Animator>().speed = 1;
 
             if (frostEnemy.GetComponent<SlimeEnemy>() != null)
             {
@@ -63,7 +63,7 @@ public class WinterPower : MonoBehaviour
         ParticleSystem particlesystem = Instantiate(particle, transform.position, Quaternion.identity);
         Destroy(particlesystem, 1.5f);
 
-        if (collision.gameObject.CompareTag("MiniSlime") || collision.gameObject.CompareTag("SlimeBoss") || collision.gameObject.CompareTag("Golem"))
+        if (collision.gameObject.CompareTag("MiniSlime"))
         {
             frostEnemy = collision.gameObject;
 

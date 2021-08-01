@@ -12,6 +12,7 @@ TagManager:
   - Golem
   - Shield
   - UltimoBoss
+  - Dano
   layers:
   - Default
   - TransparentFX

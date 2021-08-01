@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   timerChange: 7
+  slide: {fileID: 0}
   attack: 1
   timerAir: 3
   speedAir: 4.5

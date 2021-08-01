@@ -69,7 +69,7 @@ public class PlayerHealth : MonoBehaviour
         if(health <= 0)
         {
             Scene scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene("Principal");
+            SceneManager.LoadScene("Principal2");
         }
     }
 
@@ -139,7 +139,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("SlimeBoss") || other.gameObject.CompareTag("MiniSlime"))
+        if (other.gameObject.CompareTag("SlimeBoss") || other.gameObject.CompareTag("MiniSlime") || other.gameObject.CompareTag("Dano"))
         {
             if (!getHit)
             {

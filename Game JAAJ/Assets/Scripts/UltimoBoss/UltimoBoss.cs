@@ -55,18 +55,18 @@ public class UltimoBoss : MonoBehaviour
     {
         AttackLava();
         AttackChuva();
-        print(randomNum);
-        if(Input.GetKeyDown(KeyCode.E)) 
 
         if (health <= 0)
         {
             Destroy(gameObject);
+
         }
 
         if (shieldHealth >= 0)
         {
             shield.SetActive(true);
             coll.enabled = false;
+
         }
         else
         {

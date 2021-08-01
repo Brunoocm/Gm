@@ -660,7 +660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: 66651088c4955614685f326808d91443, type: 2}
-  duration: 0.2
+  duration: 0.1
 --- !u!1 &8590066004519556118
 GameObject:
   m_ObjectHideFlags: 0

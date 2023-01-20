@@ -53,51 +53,51 @@ public class SkillClock : MonoBehaviour
         }
         else
         {
-            timerPonteiro += speedPonteiro * Time.timeScale;
+            timerPonteiro += speedPonteiro * Time.deltaTime;
         }
 
         //if (Input.GetKeyDown(KeyCode.Z))
         //{
-            if (timerPonteiro <= 120 && skillPrimavera) 
-            {
-                skillPrimavera = false;
-                skillOutono = true;
-                skillInverno = false;
+        if (timerPonteiro <= 120 && skillPrimavera)
+        {
+            skillPrimavera = false;
+            skillOutono = true;
+            skillInverno = false;
 
-                iconeImageOutono.SetActive(true);
-                iconeImagePrimavera.SetActive(false);
-                iconeImageInverno.SetActive(false);
+            iconeImageOutono.SetActive(true);
+            iconeImagePrimavera.SetActive(false);
+            iconeImageInverno.SetActive(false);
 
-                playerAnim.runtimeAnimatorController = Outono;
+            playerAnim.runtimeAnimatorController = Outono;
 
-            }
-            else if (timerPonteiro <= 240 && timerPonteiro >= 120 && skillOutono  ) 
-            {
+        }
+        else if (timerPonteiro <= 240 && timerPonteiro >= 120 && skillOutono)
+        {
 
-                skillPrimavera = false;
-                skillOutono = false;
-                skillInverno = true;
+            skillPrimavera = false;
+            skillOutono = false;
+            skillInverno = true;
 
-                iconeImageInverno.SetActive(true);
-                iconeImagePrimavera.SetActive(false);
-                iconeImageOutono.SetActive(false);
+            iconeImageInverno.SetActive(true);
+            iconeImagePrimavera.SetActive(false);
+            iconeImageOutono.SetActive(false);
 
-                playerAnim.runtimeAnimatorController = Inverno;
-            }
-            else if (timerPonteiro <= 360 && timerPonteiro >= 240 && skillInverno  )
-            {
-                skillPrimavera = true;
-                skillOutono = false;
-                skillInverno = false;
+            playerAnim.runtimeAnimatorController = Inverno;
+        }
+        else if (timerPonteiro <= 360 && timerPonteiro >= 240 && skillInverno)
+        {
+            skillPrimavera = true;
+            skillOutono = false;
+            skillInverno = false;
 
-                iconeImagePrimavera.SetActive(true);
-                iconeImageOutono.SetActive(false);
-                iconeImageInverno.SetActive(false);
+            iconeImagePrimavera.SetActive(true);
+            iconeImageOutono.SetActive(false);
+            iconeImageInverno.SetActive(false);
 
-                
-                playerAnim.runtimeAnimatorController = Primavera;
 
-            }
+            playerAnim.runtimeAnimatorController = Primavera;
+
+        }
         //}       
     }
 }

@@ -23,15 +23,15 @@ public class SpecialAttack : MonoBehaviour
     {
         if(cooldownTime >= powerCooldown)
         {
-            if (Input.GetKeyDown(KeyCode.C))
-            {
-                Shoot();
-            }
-            if (isParticle)
-            {
-                Instantiate(particle, transform.position, Quaternion.identity);
-                isParticle = false;
-            }
+            //if (Input.GetKeyDown(KeyCode.C))
+            //{
+            //    Shoot();
+            //}
+            //if (isParticle)
+            //{
+            //    Instantiate(particle, transform.position, Quaternion.identity);
+            //    isParticle = false;
+            //}
         }
         else
         {

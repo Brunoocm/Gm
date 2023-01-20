@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
@@ -22,11 +23,13 @@ public class Movement : MonoBehaviour
     private bool isGrounded;
     private bool isRight;
 
+    private PlayerInput playerInput;
    
     Rigidbody2D rb;
     Animator anim;
     private void Start()
     {
+        playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         timerJump = jumping;
@@ -41,7 +44,8 @@ public class Movement : MonoBehaviour
 
     void FixedUpdate()
     {
-        move = Input.GetAxisRaw("Horizontal");
+        Vector2 moveVec = playerInput.actions["Move"].ReadValue<Vector2>();
+        move = moveVec.x;
         anim.SetFloat("SpeedMove", Mathf.Abs(move));
         rb.velocity = new Vector2(move * speed, rb.velocity.y);
     }
@@ -84,7 +88,7 @@ public class Movement : MonoBehaviour
         }
 
 
-        if (isGrounded && Input.GetKeyDown(KeyCode.W) || isGrounded && Input.GetKeyDown(KeyCode.UpArrow))
+        if (isGrounded && playerInput.actions["Jump"].WasPressedThisFrame())
         {
             anim.SetBool("Jump", true);
             isJumping = true;
@@ -94,7 +98,7 @@ public class Movement : MonoBehaviour
             FindObjectOfType<ScriptAudioManager>().Play("jump");
         }
 
-        if (isJumping && Input.GetKey(KeyCode.W) || isJumping && Input.GetKey(KeyCode.UpArrow))
+        if (isJumping && playerInput.actions["Jump"].IsPressed())
         {
             if (timerJump > 0)
             {
@@ -108,7 +112,7 @@ public class Movement : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
+        if (playerInput.actions["Jump"].WasReleasedThisFrame())
         {
             isJumping = false;
         }

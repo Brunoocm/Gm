@@ -2,15 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.InputSystem;
 public class Menu : MonoBehaviour
 {
     public static bool gamePaused = false;
     public GameObject pauseMenu;
 
+    private PlayerInput playerInput;
+
+    private void Start()
+    {
+        playerInput = GetComponent<PlayerInput>();
+    }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (playerInput.actions["Pause"].triggered)
         {
             if (gamePaused)
             {

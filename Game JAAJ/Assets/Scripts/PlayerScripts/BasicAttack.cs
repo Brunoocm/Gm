@@ -1,24 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 public class BasicAttack : MonoBehaviour
 {
     public float bulletSpeed;
+    public float cdReload;
     public GameObject Bullet;
-
     public Animator anim;
     public Transform shootPos;
+
+    private float cdTimer;
+    private PlayerInput playerInput;
     void Start()
     {
-
+        playerInput = GetComponent<PlayerInput>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        cdTimer += Time.deltaTime;
+        if (playerInput.actions["Shoot"].triggered)
         {
-            Shoot();
+            if (cdTimer >= cdReload)
+            {
+                Shoot();
+                cdTimer = 0;
+            }
         }
     }
 

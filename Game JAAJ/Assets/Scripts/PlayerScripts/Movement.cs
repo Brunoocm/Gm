@@ -7,28 +7,34 @@ using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
+    public int numJumps;
     public float speed;
     public float jump;
     public float jumping;
     public float velocidadeAr;
-
     public float radius;
+    public bool canMove;
 
     public Transform groundPos;
     public LayerMask layerGround;
 
+    private int m_numJumps;
     private float timerJump;
     private float move;
     private bool isJumping;
     private bool isGrounded;
     private bool isRight;
+    private bool isDoubleJump;
 
     private PlayerInput playerInput;
    
     Rigidbody2D rb;
     Animator anim;
-    private void Start()
+    
+    private void Awake()
     {
+        canMove = true;
+        m_numJumps = numJumps;
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -37,6 +43,9 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
+        if (!canMove)
+            return;
+
         Jump();
 
         Flip();
@@ -44,6 +53,9 @@ public class Movement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!canMove)
+            return;
+
         Vector2 moveVec = playerInput.actions["Move"].ReadValue<Vector2>();
         move = moveVec.x;
         anim.SetFloat("SpeedMove", Mathf.Abs(move));
@@ -68,25 +80,23 @@ public class Movement : MonoBehaviour
 
     }
 
-    void Jump()
+    public void Jump()
     {
         isGrounded = Physics2D.OverlapCircle(groundPos.position, radius, layerGround);
 
-        //if (isJumping) anim.SetBool("Jump", true);
-        //else anim.SetBool("Jump", false);
-
-        //if (isGrounded) anim.SetBool("Fall", false);
-
-
-        if(isGrounded)
+        if (isGrounded)
         {
             anim.SetBool("Jump", false);
+            isDoubleJump = false;
+            numJumps = m_numJumps;
         }
         else
         {
             anim.SetBool("Jump", true);
         }
 
+        if (numJumps <= 0)
+            return;
 
         if (isGrounded && playerInput.actions["Jump"].WasPressedThisFrame())
         {
@@ -94,7 +104,14 @@ public class Movement : MonoBehaviour
             isJumping = true;
             timerJump = jumping;
             rb.velocity = Vector2.up * jump;
-
+            FindObjectOfType<ScriptAudioManager>().Play("jump");
+        }
+        else if (isJumping && playerInput.actions["Jump"].WasPressedThisFrame())
+        {
+            anim.SetBool("Jump", true);
+            isJumping = true;
+            timerJump = jumping;
+            rb.velocity = Vector2.up * jump;
             FindObjectOfType<ScriptAudioManager>().Play("jump");
         }
 
@@ -108,13 +125,28 @@ public class Movement : MonoBehaviour
             }
             else
             {
-                isJumping = false;
+                //isJumping = false;
             }
         }
 
-        if (playerInput.actions["Jump"].WasReleasedThisFrame())
+        if (isJumping && playerInput.actions["Jump"].WasReleasedThisFrame())
         {
-            isJumping = false;
+            numJumps--;
         }
     }
+
+    public IEnumerator JumpTutorial()
+    {
+        while (timerJump > 0)
+        {
+            anim.SetBool("Jump", true);
+            rb.velocity = Vector2.up * jump;
+            timerJump -= Time.deltaTime;
+            yield return null;
+        }
+        yield return new WaitForSeconds(jumping);
+        anim.SetBool("Jump", false);
+        isJumping = false;
+    }
+
 }

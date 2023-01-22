@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
+using UnityEngine.InputSystem;
 public class PersonagemFala : MonoBehaviour
 {
+    public InputBinding.DisplayStringOptions displayStringOptions;
     public TextMeshProUGUI display;
+    public TextMeshProUGUI tutorialPass;
     public string[] sentences;
+
     private int index;
 
     public GameObject falaPersonagem;
@@ -15,13 +19,19 @@ public class PersonagemFala : MonoBehaviour
 
     public UnityEvent acaba; 
 
-    public UnityEvent atacar;
-
     public static bool finishTutorial;
+
+    private bool oneTime;
+    private PlayerInput playerInput;
+    private Movement movement;
     void Start()
     {
+        movement = FindObjectOfType<Movement>();
+        playerInput = GetComponent<PlayerInput>();
+
         if (!finishTutorial)
         {
+            movement.canMove = false;
             m_MyEvent.Invoke();
 
             falaPersonagem.SetActive(true);
@@ -33,37 +43,21 @@ public class PersonagemFala : MonoBehaviour
 
     void Update()
     {
+        tutorialPass.text = "Aperte " + playerInput.actions["Interact"].GetBindingDisplayString(displayStringOptions);
         if (!finishTutorial)
         {
             if (display.text == sentences[index])
             {
+                if (playerInput.actions["Interact"].triggered)
+                {
+                    NextSentence();
+                }
+                if(index == 0 && !oneTime)
+                {
+                    StartCoroutine(movement.JumpTutorial());
+                    oneTime = true;
+                }
 
-                //if (index == 2 && SkillClock.skillInverno)
-                //{
-                //    NextSentence();
-                //}
-                if (index == 4)
-                {
-                    if (Input.GetKeyDown(KeyCode.X))
-                    {
-                        NextSentence();
-                        atacar.Invoke();
-                    }
-                }
-                else
-                {
-                    if (Input.GetKeyDown(KeyCode.X))
-                    {
-                        NextSentence();
-                    }
-                }
-                //else if (index > 4)
-                //{
-                //    if (Input.GetKeyDown(KeyCode.X))
-                //    {
-                //        NextSentence();
-                //    }
-                //}
             }
         }
     }
@@ -81,11 +75,14 @@ public class PersonagemFala : MonoBehaviour
             else
             {
                 display.text = "";
+                movement.canMove = true;
                 acaba.Invoke();
                 finishTutorial = true;
             }
         }
     }
+
+
 
     IEnumerator Type()
     {
@@ -98,10 +95,7 @@ public class PersonagemFala : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Bullet"))
-        {
-            NextSentence();
-        }
+
     }
 
     private void OnTriggerExit2D(Collider2D other)

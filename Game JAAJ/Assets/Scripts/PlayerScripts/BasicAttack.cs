@@ -6,12 +6,18 @@ public class BasicAttack : MonoBehaviour
 {
     public float bulletSpeed;
     public float cdReload;
+    public bool canAttack;
     public GameObject Bullet;
     public Animator anim;
     public Transform shootPos;
 
     private float cdTimer;
     private PlayerInput playerInput;
+
+    private void Awake()
+    {
+        canAttack = true;
+    }
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -19,6 +25,9 @@ public class BasicAttack : MonoBehaviour
 
     void Update()
     {
+        if (!canAttack)
+            return;
+
         cdTimer += Time.deltaTime;
         if (playerInput.actions["Shoot"].triggered)
         {

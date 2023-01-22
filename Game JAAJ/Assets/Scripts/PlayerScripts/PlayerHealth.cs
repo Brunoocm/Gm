@@ -27,7 +27,6 @@ public class PlayerHealth : MonoBehaviour
     Color alpha;
     void Start()
     {
-        print(savedHealth);
         health = savedHealth;
 
         sprite = GetComponent<SpriteRenderer>();
@@ -35,7 +34,6 @@ public class PlayerHealth : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         timerCdBase = timerCd;
-
 
         mat = sprite.material;
     }

@@ -292,6 +292,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                             action.RemoveBindingOverride(bindingIndex);
                             CleanUp();
                             PerformInteractiveRebind(action, bindingIndex, allCompositeParts);
+                            m_RebindText.text = "Essa tecla já esta sendo usada...";
                             return;
                         }
 
@@ -310,22 +311,22 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
 
             // If it's a part binding, show the name of the part in the UI.
             var partName = default(string);
-            if (action.bindings[bindingIndex].isPartOfComposite)
+            if (action.bindings[bindingIndex].isPartOfComposite && !CheckDuplicateBindings(action, bindingIndex, allCompositeParts))
                 partName = $"Escolha uma tecla para trocar. ";
 
             // Bring up rebind overlay, if we have one.
             m_RebindOverlay?.SetActive(true);
-            if (m_RebindText != null)
+            if (m_RebindText != null && !CheckDuplicateBindings(action, bindingIndex, allCompositeParts))
             {
                 var text = !string.IsNullOrEmpty(m_RebindOperation.expectedControlType)
                     ? $"Esperando tecla..."
                     : $"Esperando tecla...";
-                m_RebindText.text = text;
+                m_RebindText.text = "Esperando tecla...";
             }
 
             // If we have no rebind overlay and no callback but we have a binding text label,
             // temporarily set the binding text label to "<Waiting>".
-            if (m_RebindOverlay == null && m_RebindText == null && m_RebindStartEvent == null && m_BindingText != null)
+            if (m_RebindOverlay == null && m_RebindText == null && m_RebindStartEvent == null && m_BindingText != null && !CheckDuplicateBindings(action, bindingIndex, allCompositeParts))
                 m_BindingText.text = "<Esperando...>";
 
             // Give listeners a chance to act on the rebind starting.

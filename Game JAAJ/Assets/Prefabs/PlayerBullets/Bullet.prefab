@@ -131,7 +131,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 6
+  m_Constraints: 4
 --- !u!114 &7902492810058993896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,4 +145,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dano: 3
+  speed: 20
+  lifeTime: 5
+  angle: 0
+  AreaDamage: 0
+  radius: 0
+  spawnOnDeath: 0
+  bulletOnDeath: []
   particle: {fileID: 8139867058744025537, guid: 72d31f29f8197f34bb81f6d3e8c49351, type: 3}

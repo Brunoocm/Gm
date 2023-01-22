@@ -1,55 +1,59 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SpecialAttack : MonoBehaviour
 {
-    public float powerSpeed, powerCooldown;
+    public float cdReload;
+    public bool canAttack;
+
+    public Transform shootPos;
     public GameObject autumnPower, winterPower, springPower;
     public ParticleSystem particle;
 
-    private bool isParticle;
-    float cooldownTime;
+    private float cdTimer;
     Animator anim;
     GameObject seasonPower;
+    private PlayerInput playerInput;
+
+    private void Awake()
+    {
+        canAttack = true;
+    }
 
     void Start()
     {
+        playerInput = GetComponent<PlayerInput>();
+
         anim = GetComponent<Animator>();
-        cooldownTime = powerCooldown;
     }
 
     void Update()
     {
-        if(cooldownTime >= powerCooldown)
-        {
-            //if (Input.GetKeyDown(KeyCode.C))
-            //{
-            //    Shoot();
-            //}
-            //if (isParticle)
-            //{
-            //    Instantiate(particle, transform.position, Quaternion.identity);
-            //    isParticle = false;
-            //}
-        }
-        else
-        {
-            cooldownTime += Time.deltaTime;
-            isParticle = true;
+        if (!canAttack)
+            return;
 
+        cdTimer += Time.deltaTime;
+        if (playerInput.actions["Shoot"].triggered)
+        {
+            if (cdTimer >= cdReload)
+            {
+                Shoot();
+                cdTimer = 0;
+            }
         }
     }
 
     void Shoot()
     {
-        GameObject b = Instantiate(SeasonPower(), GetComponent<BasicAttack>().shootPos.position, GetComponent<BasicAttack>().shootPos.rotation);
-        b.GetComponent<Rigidbody2D>().velocity = transform.right * powerSpeed;
-
-
-        anim.SetTrigger("Power");
-
-        cooldownTime = 0;
+        GameObject b = Instantiate(SeasonPower(), shootPos.position, shootPos.rotation);
+        float bSpeed = b.GetComponent<BulletScript>().speed;
+        float bAngle = b.GetComponent<BulletScript>().angle;
+        b.transform.rotation = Quaternion.AngleAxis(bAngle, Vector3.forward);
+        b.GetComponent<Rigidbody2D>().velocity = transform.right * bSpeed;
+        b.transform.right = transform.right.normalized;
+        anim.SetTrigger("Shoot");
     }
 
     GameObject SeasonPower()

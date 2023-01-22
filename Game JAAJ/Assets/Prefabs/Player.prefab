@@ -47,7 +47,6 @@ GameObject:
   - component: {fileID: 3859389632421574856}
   - component: {fileID: 3616790480381331707}
   - component: {fileID: 3034621512619904019}
-  - component: {fileID: 424746099974743872}
   - component: {fileID: 74387473572997378}
   - component: {fileID: 6197748558402755351}
   - component: {fileID: 335292167851491}
@@ -178,11 +177,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc073fa2e16d56f41b6b207a7ec0be00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numJumps: 2
   speed: 7
   jump: 15
   jumping: 0.2
   velocidadeAr: 0
   radius: 0.2
+  canMove: 0
   groundPos: {fileID: 3859389632534532824}
   layerGround:
     serializedVersion: 2
@@ -199,8 +200,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86455e825e88e1f4aaac5013497c937b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 15
-  cdReload: 0.5
+  bulletSpeed: 20
+  cdReload: 0.3
+  canAttack: 0
   Bullet: {fileID: 7993682240961373249, guid: 22c3047273e353a4abafce1026087309, type: 3}
   anim: {fileID: 3034621512619904019}
   shootPos: {fileID: 3859389633441674180}
@@ -216,11 +218,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd125856bdff7934ca398f3d820a3e2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerSpeed: 15
-  powerCooldown: 5
-  autumnPower: {fileID: 7993682240961373249, guid: ed69d5813bc930849a411ddae5850266, type: 3}
-  winterPower: {fileID: 7993682240961373249, guid: e0c01b16ac13b1b4d82fe2b8ddcafdac, type: 3}
-  springPower: {fileID: 7993682240961373249, guid: 732c321f3e5c9774db9008a065b7b9b4, type: 3}
+  cdReload: 0.4
+  canAttack: 0
+  shootPos: {fileID: 3859389633441674180}
+  autumnPower: {fileID: 7993682240961373249, guid: afba04fef2c5a244f83aa5497c94eea4, type: 3}
+  winterPower: {fileID: 7993682240961373249, guid: afba04fef2c5a244f83aa5497c94eea4, type: 3}
+  springPower: {fileID: 7993682240961373249, guid: afba04fef2c5a244f83aa5497c94eea4, type: 3}
   particle: {fileID: 4282568617096948606, guid: cc8fd41fbe61b594c81c0bf1d1ab9dbe, type: 3}
 --- !u!95 &3034621512619904019
 Animator:
@@ -241,22 +244,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &424746099974743872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3859389632421574857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shaderTypes: 0
-  normalStrenght: 5
-  normalSmoothing: 1
-  computingNormal: 0
 --- !u!114 &74387473572997378
 MonoBehaviour:
   m_ObjectHideFlags: 0

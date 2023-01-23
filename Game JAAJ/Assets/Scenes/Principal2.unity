@@ -1314,7 +1314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &239875838
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1403,17 +1403,19 @@ MonoBehaviour:
   display: {fileID: 1802515007}
   tutorialPass: {fileID: 1844472054}
   sentences:
-  - Demorou pra chegar heim?
-  - "O ''Ver\xE3o\" n\xE3o quer mais sair do trono, as outras esta\xE7\xF5es devem
-    surgir, e mudar esse clima"
-  - "Falando em mudar. parece que voc\xEAs se juntaram dessa vez"
-  - "ent\xE3o tudo \xF3timo..."
-  - " j\xE1 sabe atirar? (\"X\")"
-  - "Que \xF3timo, tudo pronto ent\xE3o"
-  - AI CARAMBA, PRECISAVA ATIRAR EM MIM???
-  - "Se voc\xEA quer ir logo pode ir."
-  - "\xD3timo, \xFAltima coisa cada esta\xE7\xE3o tem um poder tamb\xE9m. \xE9 isso.
-    (\"C\")"
+  - "Apesar de termos conseguido juntar voc\xEAs 3 nesse recept\xE1culo, suas for\xE7as
+    foram canalizadas em 3 habilidades"
+  - "A primeira \xE9 da Primavera, essa habilidade causa uma grande quantidade de
+    dano quando jogada de perto, "
+  - "mas ao explodir pode acertar em mais \xE1reas com um dano menor."
+  - Atire para testar a habilidade da Primavera
+  - "A Pr\xF3xima habilidade \xE9 do Outono, com essa habilidade voce pode pular
+    at\xE9 duas vezes "
+  - Pule duas vezes para testar a habilidade do Outono
+  - "A \xFAltima habilidade \xE9 do inverno, com essa habilidade voc\xEA pode atirar
+    em inimigos causando lentid\xE3o neles"
+  - Atire para testar a habilidade do Inverno
+  - "Sabendo de tudo isso, voc\xEA j\xE1 est\xE1 pronto para continuar."
   falaPersonagem: {fileID: 846551353}
   m_MyEvent:
     m_PersistentCalls:
@@ -6897,6 +6899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeSeasonFX: {fileID: 0}
+  stopClock: 0
   speedPonteiro: 25
   playerAnim: {fileID: 603751683}
   Primavera: {fileID: 9100000, guid: 183bb3179947a7d428de5622d045268a, type: 2}

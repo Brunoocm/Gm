@@ -9,6 +9,8 @@ public class PersonagemFala : MonoBehaviour
     public InputBinding.DisplayStringOptions displayStringOptions;
     public TextMeshProUGUI display;
     public TextMeshProUGUI tutorialPass;
+
+    [TextArea(7, 20)]
     public string[] sentences;
 
     private int index;
@@ -21,17 +23,22 @@ public class PersonagemFala : MonoBehaviour
 
     public static bool finishTutorial;
 
-    private bool oneTime;
+    private bool playetAction;
     private PlayerInput playerInput;
+    private SpecialAttack specialAttack;
     private Movement movement;
+    private SkillClock skillClock;
     void Start()
     {
+        skillClock = FindObjectOfType<SkillClock>();
         movement = FindObjectOfType<Movement>();
+        specialAttack = FindObjectOfType<SpecialAttack>();
         playerInput = GetComponent<PlayerInput>();
 
         if (!finishTutorial)
         {
             movement.canMove = false;
+            specialAttack.canAttack = false;
             m_MyEvent.Invoke();
 
             falaPersonagem.SetActive(true);
@@ -48,14 +55,21 @@ public class PersonagemFala : MonoBehaviour
         {
             if (display.text == sentences[index])
             {
-                if (playerInput.actions["Interact"].triggered)
+                if (playerInput.actions["Interact"].triggered && !playetAction)
                 {
                     NextSentence();
                 }
-                if(index == 0 && !oneTime)
+                if (index == 3)
                 {
-                    StartCoroutine(movement.JumpTutorial());
-                    oneTime = true;
+                    PrimaveraAbility();
+                }
+                if (index == 5)
+                {
+                    OutonoAbility();
+                }
+                if (index == 7)
+                {
+                    InvernoAbility();
                 }
 
             }
@@ -76,13 +90,50 @@ public class PersonagemFala : MonoBehaviour
             {
                 display.text = "";
                 movement.canMove = true;
+                specialAttack.canAttack = true;
                 acaba.Invoke();
                 finishTutorial = true;
             }
         }
     }
 
+    void PrimaveraAbility()
+    {
+        playetAction = true;
+        skillClock.timerPonteiro = 300;
 
+        if(playerInput.actions["Shoot"].triggered)
+        {
+            NextSentence();
+            specialAttack.Shoot();
+            playetAction = false;
+        }
+    } 
+    void OutonoAbility()
+    {
+        playetAction = true;
+        skillClock.timerPonteiro = 60;
+        movement.Jump();
+
+        if(movement.numJumps == 0)
+        {
+            NextSentence();
+            skillClock.timerPonteiro = 180;
+            playetAction = false;
+        }
+    }
+    void InvernoAbility()
+    {
+        playetAction = true;
+        skillClock.timerPonteiro = 180;
+
+        if (playerInput.actions["Shoot"].triggered)
+        {
+            NextSentence();
+            specialAttack.Shoot();
+            playetAction = false;
+        }
+    }
 
     IEnumerator Type()
     {

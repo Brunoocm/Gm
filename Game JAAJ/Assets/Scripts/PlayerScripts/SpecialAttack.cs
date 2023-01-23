@@ -45,7 +45,7 @@ public class SpecialAttack : MonoBehaviour
         }
     }
 
-    void Shoot()
+    public void Shoot()
     {
         GameObject b = Instantiate(SeasonPower(), shootPos.position, shootPos.rotation);
         float bSpeed = b.GetComponent<BulletScript>().speed;

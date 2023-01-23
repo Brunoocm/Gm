@@ -8,6 +8,7 @@ public class SkillClock : MonoBehaviour
 {
     public GameObject changeSeasonFX;
 
+    public bool stopClock;
     public float speedPonteiro;
 
     public static bool skillPrimavera, skillOutono, skillInverno;
@@ -24,23 +25,23 @@ public class SkillClock : MonoBehaviour
     public GameObject iconeImageInverno;
 
 
-    [SerializeField]private float timerPonteiro;
+    [HideInInspector] public float timerPonteiro;
 
     Transform ponteiro;
 
     void Start()
     {
-        
+        stopClock = false;
         ponteiro = GameObject.Find("PonteiroPivot").GetComponent<Transform>();
         skillOutono = true;
     }
 
     void Update()
     {
-        PonteiroUpdate();
-
-        //Ponteiro.transform.Rotate(0, 0, speedPonteiro);
-
+        if (!stopClock)
+        {
+            PonteiroUpdate();
+        }
     }
 
     void PonteiroUpdate()
@@ -58,8 +59,9 @@ public class SkillClock : MonoBehaviour
 
         //if (Input.GetKeyDown(KeyCode.Z))
         //{
-        if (timerPonteiro <= 120 && skillPrimavera)
+        if (timerPonteiro <= 120)
         {
+
             skillPrimavera = false;
             skillOutono = true;
             skillInverno = false;
@@ -71,7 +73,7 @@ public class SkillClock : MonoBehaviour
             playerAnim.runtimeAnimatorController = Outono;
 
         }
-        else if (timerPonteiro <= 240 && timerPonteiro >= 120 && skillOutono)
+        else if (timerPonteiro <= 240 && timerPonteiro >= 120)
         {
 
             skillPrimavera = false;
@@ -84,8 +86,9 @@ public class SkillClock : MonoBehaviour
 
             playerAnim.runtimeAnimatorController = Inverno;
         }
-        else if (timerPonteiro <= 360 && timerPonteiro >= 240 && skillInverno)
+        else if (timerPonteiro <= 360 && timerPonteiro >= 240)
         {
+
             skillPrimavera = true;
             skillOutono = false;
             skillInverno = false;

@@ -24,7 +24,7 @@ public class Movement : MonoBehaviour
     private bool isJumping;
     private bool isGrounded;
     private bool isRight;
-    private bool isDoubleJump;
+    [HideInInspector] public bool isDoubleJump;
 
     private PlayerInput playerInput;
    
@@ -110,6 +110,7 @@ public class Movement : MonoBehaviour
         {
             anim.SetBool("Jump", true);
             isJumping = true;
+            isDoubleJump = true;
             timerJump = jumping;
             rb.velocity = Vector2.up * jump;
             FindObjectOfType<ScriptAudioManager>().Play("jump");
@@ -133,20 +134,6 @@ public class Movement : MonoBehaviour
         {
             numJumps--;
         }
-    }
-
-    public IEnumerator JumpTutorial()
-    {
-        while (timerJump > 0)
-        {
-            anim.SetBool("Jump", true);
-            rb.velocity = Vector2.up * jump;
-            timerJump -= Time.deltaTime;
-            yield return null;
-        }
-        yield return new WaitForSeconds(jumping);
-        anim.SetBool("Jump", false);
-        isJumping = false;
     }
 
 }

@@ -95,7 +95,9 @@ public class Movement : MonoBehaviour
         {
             anim.SetBool("Jump", false);
             isDoubleJump = false;
-            numJumps = m_numJumps;
+
+            if (SkillClock.skillOutono) numJumps = m_numJumps;
+            else numJumps = 1;
         }
         else
         {

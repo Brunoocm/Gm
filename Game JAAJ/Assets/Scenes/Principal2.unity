@@ -5094,7 +5094,7 @@ PrefabInstance:
     - target: {fileID: 3034621512619904019, guid: 2bd753e65a2799349bcf4e05e4e6303b, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: b2529e8acea74d64aa5cbcafa97c0793, type: 2}
+      objectReference: {fileID: 9100000, guid: 183bb3179947a7d428de5622d045268a, type: 2}
     - target: {fileID: 3859389632421574857, guid: 2bd753e65a2799349bcf4e05e4e6303b, type: 3}
       propertyPath: m_Name
       value: Player

@@ -5,10 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class GolemBoss : MonoBehaviour
 {
-    [Header("Vida")]
-    public int health;
     public float timerChange;
-    public Slider slide;
     private float timerChangeBase;
     private bool isDead;
 
@@ -27,7 +24,7 @@ public class GolemBoss : MonoBehaviour
 
     Vector3 newPos;
 
-
+    EnemyHealth enemyHealth;
     Transform playerPos;
     Animator anim;
 
@@ -40,6 +37,7 @@ public class GolemBoss : MonoBehaviour
     }
     void Start()
     {
+        enemyHealth = GetComponent<EnemyHealth>();
         anim = gameObject.GetComponent<Animator>();
         playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
@@ -48,9 +46,6 @@ public class GolemBoss : MonoBehaviour
 
         isDead = true;
         StartCoroutine(wait());
-
-        slide.maxValue = health;
-        slide.value = health;
     }
 
 
@@ -59,12 +54,9 @@ public class GolemBoss : MonoBehaviour
         if (!isDead)
         {
             AttackFunction();
-
-            slide.value = health;
-
         }
 
-        if (health <= 0)
+        if (enemyHealth.health <= 0)
         {
             Passar.segundoBoss = true;
             Destroy(gameObject, 0.1f);
@@ -149,11 +141,6 @@ public class GolemBoss : MonoBehaviour
 
 
         }
-    }
-
-    public void Dano(int dano)
-    {
-        health -= dano;
     }
 
     public void SomSoco()

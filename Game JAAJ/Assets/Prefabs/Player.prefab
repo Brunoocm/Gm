@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 3859389632421574858}
   - component: {fileID: 433495359133280722}
   - component: {fileID: 3859389632421574859}
-  - component: {fileID: 3859389632421574856}
   - component: {fileID: 3616790480381331707}
   - component: {fileID: 3034621512619904019}
   - component: {fileID: 74387473572997378}
@@ -188,24 +187,7 @@ MonoBehaviour:
   layerGround:
     serializedVersion: 2
     m_Bits: 8
---- !u!114 &3859389632421574856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3859389632421574857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86455e825e88e1f4aaac5013497c937b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletSpeed: 20
-  cdReload: 0.3
-  canAttack: 0
-  Bullet: {fileID: 7993682240961373249, guid: 22c3047273e353a4abafce1026087309, type: 3}
-  anim: {fileID: 3034621512619904019}
-  shootPos: {fileID: 3859389633441674180}
+  isDoubleJump: 0
 --- !u!114 &3616790480381331707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +203,7 @@ MonoBehaviour:
   cdReload: 0.4
   canAttack: 0
   shootPos: {fileID: 3859389633441674180}
-  autumnPower: {fileID: 7993682240961373249, guid: afba04fef2c5a244f83aa5497c94eea4, type: 3}
+  autumnPower: {fileID: 7993682240961373249, guid: 22c3047273e353a4abafce1026087309, type: 3}
   winterPower: {fileID: 7993682240961373249, guid: afba04fef2c5a244f83aa5497c94eea4, type: 3}
   springPower: {fileID: 7993682240961373249, guid: afba04fef2c5a244f83aa5497c94eea4, type: 3}
   particle: {fileID: 4282568617096948606, guid: cc8fd41fbe61b594c81c0bf1d1ab9dbe, type: 3}

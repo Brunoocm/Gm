@@ -148,6 +148,8 @@ MonoBehaviour:
   speed: 20
   lifeTime: 5
   angle: 0
+  hasFreeze: 1
+  freezeDuration: 5
   AreaDamage: 0
   radius: 0
   spawnOnDeath: 0

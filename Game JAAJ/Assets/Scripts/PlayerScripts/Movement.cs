@@ -49,6 +49,13 @@ public class Movement : MonoBehaviour
         Jump();
 
         Flip();
+
+        if (playerInput.actions["Interact"].IsPressed())
+        {
+            Time.timeScale = 0.5f;
+            Time.fixedDeltaTime = 0.02F * Time.timeScale;
+        }
+
     }
 
     void FixedUpdate()

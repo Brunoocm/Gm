@@ -10,6 +10,10 @@ public class BulletScript : MonoBehaviour
     public float lifeTime;
     public float angle;
 
+    [Header("Freeze")]
+    public bool hasFreeze;
+    public float freezeDuration;
+
     [Header("Area")]
     public bool AreaDamage;
     public float radius;
@@ -49,26 +53,18 @@ public class BulletScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-       
-
-        if (other.gameObject.CompareTag("SlimeBoss"))
+        if (other.GetComponent<EnemyHealth>() != null)
         {
-            other.gameObject.GetComponent<SlimeBoss>().Dano(dano);
+            other.GetComponent<EnemyHealth>().Dano(dano);
             particles();
             Destroy(gameObject);
         }
-        if (other.gameObject.CompareTag("MiniSlime"))
+        if (other.GetComponent<FreezeEnemy>() != null)
         {
-            other.gameObject.GetComponent<SlimeEnemy>().Dano(dano);
+            other.GetComponent<FreezeEnemy>().FreezeObject(freezeDuration);
             particles();
             Destroy(gameObject);
-        }  
-        if (other.gameObject.CompareTag("Golem"))
-        {
-            other.gameObject.GetComponent<GolemBoss>().Dano(dano);
-            particles();
-            Destroy(gameObject);
-        }  
+        }
         if (other.gameObject.CompareTag("Shield"))
         {
             other.gameObject.transform.parent.GetComponent<UltimoBoss>().DanoShield(dano);

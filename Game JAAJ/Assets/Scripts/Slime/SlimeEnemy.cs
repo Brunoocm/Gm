@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class SlimeEnemy : MonoBehaviour
 {
-    public int health;
     public float speed;
 
     [SerializeField] private bool isRight;
@@ -13,11 +12,13 @@ public class SlimeEnemy : MonoBehaviour
     private bool died;
 
 
+    EnemyHealth enemyHealth;
     Animator anim;
     Rigidbody2D rb;
     SpriteRenderer sprite;
     void Start()
     {
+        enemyHealth = GetComponent<EnemyHealth>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
@@ -29,7 +30,7 @@ public class SlimeEnemy : MonoBehaviour
             Attack();
         }
 
-        if(health <=0)
+        if(enemyHealth.health <= 0)
         {
             Destroy(gameObject);
             died = true;
@@ -64,25 +65,12 @@ public class SlimeEnemy : MonoBehaviour
             if (isRight)
             {
                 isRight = false;
-                //transform.eulerAngles = new Vector2(0, 180);
-                Flip();
-
-                //if (speed < 0)
-                //{
-                //    isRight = true;
-                //}
-                
+                Flip();         
             }
             else
             {
                 isRight = true;
-                //transform.eulerAngles = new Vector2(0, 0);
                 Flip();
-
-                //if(speed > 0)
-                //{
-                //    isRight = false;
-                //}
             }
         }
 
@@ -92,36 +80,11 @@ public class SlimeEnemy : MonoBehaviour
             lTemp.x *= -1;
             transform.localScale = lTemp;
         }
-
-        //if (other.gameObject.CompareTag("Player"))
-        //{
-        //    Rigidbody2D player = other.GetComponent<Rigidbody2D>();
-        //    if (player != null)
-        //    {
-        //        //player.isKinematic = true;
-        //        Vector2 difference = player.transform.position - transform.position;
-        //        difference = difference.normalized * 4;
-        //        player.AddForce(difference, ForceMode2D.Force);
-        //        StartCoroutine(KnockbackWait(player));
-
-        //    }
-        //}
     }
 
     public void Dano(int dano)
     {
-        health -= dano;
+        enemyHealth.health -= dano;
     }
-
-    //IEnumerator KnockbackWait(Rigidbody2D player)
-    //{
-    //    if (player != null)
-    //    {
-    //        yield return new WaitForSeconds(1);
-    //        player.velocity = Vector2.zero;
-    //        //player.isKinematic = false;
-    //    }
-    //}
-
    
 }

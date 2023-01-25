@@ -6,10 +6,6 @@ using UnityEngine.UI;
 
 public class SlimeBoss : MonoBehaviour
 {
-    [Header("Health")]
-    public int health;
-    public Slider slide;
-
     [Header("Idle")]
     [SerializeField] private bool idle;
     public float timerBetweenSet;
@@ -25,7 +21,7 @@ public class SlimeBoss : MonoBehaviour
 
     private float timerBase;
     private int numSlimes;
-    [SerializeField]private int count;
+    [SerializeField] private int count;
     GameObject[] ArraySlimes;
     Transform spawnPos;
    
@@ -37,9 +33,11 @@ public class SlimeBoss : MonoBehaviour
 
     private float timerAirBase;
     private bool following;
+    private bool isFreezed;
+
+    EnemyHealth enemyHealth;
     GameObject ShadowObj;
     Vector3 newPos;
-
     Transform playerPos;
     Animator anim;
 
@@ -52,6 +50,7 @@ public class SlimeBoss : MonoBehaviour
     }
     void Start()
     {
+        enemyHealth = GetComponent<EnemyHealth>();
         anim = gameObject.GetComponent<Animator>();
 
         spawnPos = GameObject.Find("SpawnPos").GetComponent<Transform>();
@@ -61,12 +60,13 @@ public class SlimeBoss : MonoBehaviour
 
         timerBase = timerSpawn;
         timerAirBase = timerAir;
-
-        slide.maxValue = health;
     }
 
     void Update()
     {
+        if (isFreezed)
+            return;
+
         if (!died)
         {
 
@@ -80,17 +80,23 @@ public class SlimeBoss : MonoBehaviour
             {
                 numSlimes = i;
             }
-
-            slide.value = health;
-
         }
 
-        if (health <= 0)
+        if (enemyHealth.health <= 0)
         {
             Passar.primeiroBoss = true;
             Destroy(gameObject, 0.2f);
             died = true;
         }
+    }
+
+    public IEnumerator Freeze(float duration)
+    {
+        isFreezed = true;
+        anim.speed = 0;
+        yield return new WaitForSeconds(duration);
+        anim.speed = 1;
+        isFreezed = false;
     }
 
     void ChangeStages()
@@ -183,12 +189,4 @@ public class SlimeBoss : MonoBehaviour
 
         }
     }
-
-    public void Dano(int dano)
-    {
-        health -= dano;
-    }
-
-
-
 }

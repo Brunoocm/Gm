@@ -10,6 +10,7 @@ public class SlimeEnemy : MonoBehaviour
     [SerializeField] private bool isRight;
     [HideInInspector] public bool jumping = true;
     private bool died;
+    private bool isFreezed;
 
 
     EnemyHealth enemyHealth;
@@ -25,19 +26,36 @@ public class SlimeEnemy : MonoBehaviour
 
     void Update()
     {
-        if (!died)
-        {
-            Attack();
-        }
-
-        if(enemyHealth.health <= 0)
+        if (enemyHealth.health <= 0)
         {
             Destroy(gameObject);
             died = true;
         }
 
-    }
+        if (isFreezed)
+            return;
 
+        if (!died)
+        {
+            Attack();
+        }
+
+        
+
+    }
+    public IEnumerator Freeze(float duration)
+    {
+        if (!isFreezed)
+        {
+            isFreezed = true;
+            anim.speed = 0;
+            rb.bodyType = RigidbodyType2D.Static;
+            yield return new WaitForSeconds(duration);
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            anim.speed = 1;
+            isFreezed = false;
+        }
+    }
     void Attack()
     {
         if (jumping)

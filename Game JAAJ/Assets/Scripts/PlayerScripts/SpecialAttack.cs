@@ -35,7 +35,7 @@ public class SpecialAttack : MonoBehaviour
             return;
 
         cdTimer += Time.deltaTime;
-        if (playerInput.actions["Shoot"].triggered)
+        if (playerInput.actions["Shoot"].IsPressed())
         {
             if (cdTimer >= cdReload)
             {

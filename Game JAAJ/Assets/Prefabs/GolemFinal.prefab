@@ -541,6 +541,7 @@ GameObject:
   - component: {fileID: 3549194905187473861}
   - component: {fileID: 3890404818242998674}
   - component: {fileID: 3549194905187473859}
+  - component: {fileID: 1810770823243444800}
   - component: {fileID: 3549194905187473858}
   - component: {fileID: 3549194905187473857}
   m_Layer: 0
@@ -632,8 +633,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e909a85b095dab40851dc457cbdc340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBoss: 1
   health: 125
+  isBoss: 1
   slide: {fileID: 278313098842004155}
 --- !u!114 &3549194905187473859
 MonoBehaviour:
@@ -653,6 +654,19 @@ MonoBehaviour:
   speedAir: 4.5
   Soco: {fileID: 3549194905771326837}
   Soco2: {fileID: 3549194905657801914}
+--- !u!114 &1810770823243444800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3549194905187473862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148a33d2fb682c84588eb8bf462981f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monoBehaviourScript: {fileID: 3549194905187473859}
 --- !u!95 &3549194905187473858
 Animator:
   serializedVersion: 3
@@ -1063,6 +1077,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: 66651088c4955614685f326808d91443, type: 2}
   duration: 0.1
+  freezeFlashMaterial: {fileID: 2100000, guid: bf60f3eaae7b67b4fbe11911ea517a25, type: 2}
+  freezeDuration: 0
 --- !u!114 &5077613360367893662
 MonoBehaviour:
   m_ObjectHideFlags: 0

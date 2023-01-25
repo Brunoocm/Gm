@@ -200,11 +200,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd125856bdff7934ca398f3d820a3e2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cdReload: 0.4
+  cdReload: 0.5
   canAttack: 0
   shootPos: {fileID: 3859389633441674180}
   autumnPower: {fileID: 7993682240961373249, guid: 22c3047273e353a4abafce1026087309, type: 3}
-  winterPower: {fileID: 7993682240961373249, guid: afba04fef2c5a244f83aa5497c94eea4, type: 3}
+  winterPower: {fileID: 7993682240961373249, guid: 637cc27598357e244b311030eb549a78, type: 3}
   springPower: {fileID: 7993682240961373249, guid: afba04fef2c5a244f83aa5497c94eea4, type: 3}
   particle: {fileID: 4282568617096948606, guid: cc8fd41fbe61b594c81c0bf1d1ab9dbe, type: 3}
 --- !u!95 &3034621512619904019
@@ -246,8 +246,6 @@ MonoBehaviour:
   LuzDireita: {fileID: 0}
   Hatch: {fileID: 0}
   HatchAberto: {fileID: 0}
-  HealthSlime: {fileID: 0}
-  HealthGolem: {fileID: 0}
   cam: {fileID: 0}
   paredes: {fileID: 0}
 --- !u!70 &6197748558402755351

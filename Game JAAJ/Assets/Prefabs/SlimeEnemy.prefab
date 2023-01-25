@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7876183994492808362}
   - component: {fileID: 1140099253172055574}
   - component: {fileID: 8352228734589005994}
+  - component: {fileID: 1783462594039128919}
   - component: {fileID: 6643885397748806410}
   m_Layer: 0
   m_Name: SlimeEnemy
@@ -168,8 +169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e909a85b095dab40851dc457cbdc340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBoss: 0
   health: 10
+  isBoss: 0
   slide: {fileID: 0}
 --- !u!114 &1140099253172055574
 MonoBehaviour:
@@ -183,7 +184,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e13da6e1b1f56244bda74a218aa8b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
   speed: 4
   isRight: 1
   jumping: 1
@@ -201,6 +201,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: 66651088c4955614685f326808d91443, type: 2}
   duration: 0.2
+  freezeFlashMaterial: {fileID: 2100000, guid: bf60f3eaae7b67b4fbe11911ea517a25, type: 2}
+  freezeDuration: 0
+--- !u!114 &1783462594039128919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140099253172055568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148a33d2fb682c84588eb8bf462981f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monoBehaviourScript: {fileID: 1140099253172055574}
 --- !u!232 &6643885397748806410
 DistanceJoint2D:
   m_ObjectHideFlags: 0

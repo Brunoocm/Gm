@@ -12,13 +12,14 @@ public class FreezeEnemy : MonoBehaviour
     }
 }
 
-//Padrao para usar ======>>>>
-
 //public IEnumerator Freeze(float duration)
 //{
-//    isFreezed = true;
-//    anim.speed = 0;
-//    yield return new WaitForSeconds(duration);
-//    anim.speed = 1;
-//    isFreezed = false;
+//    if (!isFreezed)
+//    {
+//        isFreezed = true;
+//        anim.speed = 0;
+//        yield return new WaitForSeconds(duration);
+//        anim.speed = 1;
+//        isFreezed = false;
+//    }
 //}

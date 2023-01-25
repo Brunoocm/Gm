@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5740515863152001612}
   - component: {fileID: 8962874930545874818}
   - component: {fileID: 7902492810058993896}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BulletMiniSpringForward
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -148,6 +148,8 @@ MonoBehaviour:
   speed: 20
   lifeTime: 1
   angle: 0
+  hasFreeze: 0
+  freezeDuration: 0
   AreaDamage: 0
   radius: 0
   spawnOnDeath: 0

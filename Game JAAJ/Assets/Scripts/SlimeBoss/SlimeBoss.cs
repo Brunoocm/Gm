@@ -64,6 +64,13 @@ public class SlimeBoss : MonoBehaviour
 
     void Update()
     {
+        if (enemyHealth.health <= 0)
+        {
+            Passar.primeiroBoss = true;
+            Destroy(gameObject, 0.2f);
+            died = true;
+        }
+
         if (isFreezed)
             return;
 
@@ -82,21 +89,19 @@ public class SlimeBoss : MonoBehaviour
             }
         }
 
-        if (enemyHealth.health <= 0)
-        {
-            Passar.primeiroBoss = true;
-            Destroy(gameObject, 0.2f);
-            died = true;
-        }
+        
     }
 
     public IEnumerator Freeze(float duration)
     {
-        isFreezed = true;
-        anim.speed = 0;
-        yield return new WaitForSeconds(duration);
-        anim.speed = 1;
-        isFreezed = false;
+        if (!isFreezed)
+        {
+            isFreezed = true;
+            anim.speed = 0;
+            yield return new WaitForSeconds(duration);
+            anim.speed = 1;
+            isFreezed = false;
+        }
     }
 
     void ChangeStages()

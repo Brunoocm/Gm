@@ -5095,14 +5095,6 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b2529e8acea74d64aa5cbcafa97c0793, type: 2}
-    - target: {fileID: 3616790480381331707, guid: 2bd753e65a2799349bcf4e05e4e6303b, type: 3}
-      propertyPath: springPower
-      value: 
-      objectReference: {fileID: 7993682240961373249, guid: 22c3047273e353a4abafce1026087309, type: 3}
-    - target: {fileID: 3616790480381331707, guid: 2bd753e65a2799349bcf4e05e4e6303b, type: 3}
-      propertyPath: winterPower
-      value: 
-      objectReference: {fileID: 7993682240961373249, guid: 22c3047273e353a4abafce1026087309, type: 3}
     - target: {fileID: 3859389632421574857, guid: 2bd753e65a2799349bcf4e05e4e6303b, type: 3}
       propertyPath: m_Name
       value: Player

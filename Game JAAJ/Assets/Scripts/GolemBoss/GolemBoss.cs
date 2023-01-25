@@ -20,6 +20,7 @@ public class GolemBoss : MonoBehaviour
 
     private float timerAirBase;
     private bool following;
+    private bool isFreezed;
     bool ativo;
 
     Vector3 newPos;
@@ -51,16 +52,33 @@ public class GolemBoss : MonoBehaviour
 
     void Update()
     {
-        if (!isDead)
-        {
-            AttackFunction();
-        }
-
         if (enemyHealth.health <= 0)
         {
             Passar.segundoBoss = true;
             Destroy(gameObject, 0.1f);
             isDead = true;
+        }
+
+        if (isFreezed)
+            return;
+
+        if (!isDead)
+        {
+            AttackFunction();
+        }
+
+       
+    }
+
+    public IEnumerator Freeze(float duration)
+    {
+        if (!isFreezed)
+        {
+            isFreezed = true;
+            anim.speed = 0;
+            yield return new WaitForSeconds(duration);
+            anim.speed = 1;
+            isFreezed = false;
         }
     }
 

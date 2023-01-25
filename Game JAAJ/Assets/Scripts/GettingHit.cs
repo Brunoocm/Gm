@@ -25,6 +25,8 @@ public class GettingHit : MonoBehaviour
     private Coroutine flashRoutine;
     private Coroutine freezeRoutine;
 
+    private bool cdCoroutine;
+
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -33,14 +35,14 @@ public class GettingHit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Bullet"))
+        if(other.gameObject.CompareTag("Bullet") && !cdCoroutine)
         {
             if(other.GetComponent<BulletScript>().hasFreeze)
             {
                 freezeDuration = other.GetComponent<BulletScript>().freezeDuration;
                 FreezeFlash();
             }
-            else
+            else if(!cdCoroutine)
             {
                 Flash();
             }
@@ -80,11 +82,15 @@ public class GettingHit : MonoBehaviour
     }
     private IEnumerator FreezeRoutine()
     {
+        cdCoroutine = true;
+
         spriteRenderer.material = freezeFlashMaterial;
 
         yield return new WaitForSeconds(freezeDuration);
 
         spriteRenderer.material = originalMaterial;
+
+        cdCoroutine = false;
 
         flashRoutine = null;
     }

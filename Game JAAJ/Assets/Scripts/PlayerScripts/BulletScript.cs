@@ -59,7 +59,7 @@ public class BulletScript : MonoBehaviour
             particles();
             Destroy(gameObject);
         }
-        if (other.GetComponent<FreezeEnemy>() != null)
+        if (other.GetComponent<FreezeEnemy>() != null && hasFreeze)
         {
             other.GetComponent<FreezeEnemy>().FreezeObject(freezeDuration);
             particles();

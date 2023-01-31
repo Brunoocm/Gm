@@ -34,12 +34,13 @@ public class UltimoBoss : MonoBehaviour
 
     [Header("Protection")]
     public GameObject shield;
+    public Collider2D healh;
     public int shieldHealth;
     public float timerCD;
 
     private int shieldBaseHealth;
     private float timerBaseCD;
-    BoxCollider2D coll;
+    //BoxCollider2D coll;
 
     private void Awake()
     {
@@ -51,7 +52,7 @@ public class UltimoBoss : MonoBehaviour
     }
     void Start()
     {
-        coll = GetComponent<BoxCollider2D>();
+        //coll = GetComponent<BoxCollider2D>();
         timerBtw = 0;
 
 
@@ -77,7 +78,8 @@ public class UltimoBoss : MonoBehaviour
         if (shieldHealth >= 0)
         {
             shield.SetActive(true);
-            coll.enabled = false;
+            healh.enabled = false;
+            //coll.enabled = false;
 
         }
         else
@@ -85,7 +87,8 @@ public class UltimoBoss : MonoBehaviour
             timerCD -= Time.deltaTime;
 
             shield.SetActive(false);
-            coll.enabled = true;
+            healh.enabled = true;
+            //coll.enabled = true;
             if (timerCD <= 0)
             {               
                 shieldHealth = shieldBaseHealth;

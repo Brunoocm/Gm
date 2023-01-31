@@ -33,11 +33,11 @@ public class Passar : MonoBehaviour
     {
         if(primeiroBoss)
         {
-            LuzEsquerda.SetActive(false);
+            LuzEsquerda.SetActive(true);
         }
         if(segundoBoss)
         {
-            LuzDireita.SetActive(false);
+            LuzDireita.SetActive(true);
         }
         if(segundoBoss && primeiroBoss)
         {

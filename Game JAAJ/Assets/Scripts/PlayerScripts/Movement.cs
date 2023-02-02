@@ -18,6 +18,10 @@ public class Movement : MonoBehaviour
     public Transform groundPos;
     public LayerMask layerGround;
 
+    public ParticleSystem walkParticle;
+    public ParticleSystem jumpParticle;
+    public ParticleSystem doubleJumpParticle;
+
     private int m_numJumps;
     private float timerJump;
     private float move;
@@ -54,6 +58,20 @@ public class Movement : MonoBehaviour
         {
             Time.timeScale = 0.5f;
             Time.fixedDeltaTime = 0.02F * Time.timeScale;
+        }
+
+
+        if (rb.velocity.x != 0 && isGrounded)
+        {
+            walkParticle.Play();
+            print("walking");
+
+        }
+        else
+        {
+            walkParticle.Stop();
+            print("NOT walking");
+
         }
 
     }
@@ -98,6 +116,7 @@ public class Movement : MonoBehaviour
 
             if (SkillClock.skillOutono) numJumps = m_numJumps;
             else numJumps = 1;
+
         }
         else
         {
@@ -114,6 +133,9 @@ public class Movement : MonoBehaviour
             timerJump = jumping;
             rb.velocity = Vector2.up * jump;
             FindObjectOfType<ScriptAudioManager>().Play("jump");
+            Instantiate(jumpParticle, groundPos.position, jumpParticle.transform.rotation);
+
+            //Instantiate(jumpParticle, groundPos.position, jumpParticle.transform.rotation);
         }
         else if (isJumping && playerInput.actions["Jump"].WasPressedThisFrame())
         {
@@ -123,6 +145,7 @@ public class Movement : MonoBehaviour
             timerJump = jumping;
             rb.velocity = Vector2.up * jump;
             FindObjectOfType<ScriptAudioManager>().Play("jump");
+            Instantiate(doubleJumpParticle, groundPos.position + new Vector3(0, 1.3f, 0), Quaternion.identity);
         }
 
         if (isJumping && playerInput.actions["Jump"].IsPressed())
@@ -145,4 +168,10 @@ public class Movement : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("chao"))
+        {
+        }
+    }
 }

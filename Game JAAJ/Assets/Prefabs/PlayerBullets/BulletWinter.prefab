@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7993682240961373249}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.74, y: -0.37, z: -2.5184476}
-  m_LocalScale: {x: 1.6693828, y: 1.6693828, z: 1.6693828}
+  m_LocalScale: {x: 1.2647913, y: 1.2647913, z: 1.2647913}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0, g: 0.21097231, b: 1, a: 1}
+  m_Sprite: {fileID: -5947657344439395655, guid: c4d68183dca9b264784ca86a7440b744, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,14 +102,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2, y: 0.2}
+    oldSize: {x: 0.6814815, y: 0.6074074}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 0.47, y: 0.47}
   m_EdgeRadius: 0
 --- !u!50 &8962874930545874818
 Rigidbody2D:
@@ -126,7 +126,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -154,4 +154,4 @@ MonoBehaviour:
   radius: 0
   spawnOnDeath: 0
   bulletOnDeath: []
-  particle: {fileID: 8139867058744025537, guid: 72d31f29f8197f34bb81f6d3e8c49351, type: 3}
+  particle: {fileID: 7716590637914196280, guid: 99f7163435a548f469de6570eca336a6, type: 3}

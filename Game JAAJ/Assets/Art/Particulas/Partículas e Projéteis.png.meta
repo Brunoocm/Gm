@@ -1,0 +1,744 @@
+fileFormatVersion: 2
+guid: c4d68183dca9b264784ca86a7440b744
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5163858927151925119
+    second: "Part\xEDculas e Proj\xE9teis_0"
+  - first:
+      213: 868217760296619772
+    second: "Part\xEDculas e Proj\xE9teis_1"
+  - first:
+      213: 6873683415526303850
+    second: "Part\xEDculas e Proj\xE9teis_2"
+  - first:
+      213: 5266821070312954840
+    second: "Part\xEDculas e Proj\xE9teis_3"
+  - first:
+      213: -9008868002098607258
+    second: "Part\xEDculas e Proj\xE9teis_4"
+  - first:
+      213: 2755704815458073785
+    second: "Part\xEDculas e Proj\xE9teis_5"
+  - first:
+      213: 7435780189858982561
+    second: "Part\xEDculas e Proj\xE9teis_6"
+  - first:
+      213: 2315937680803196025
+    second: "Part\xEDculas e Proj\xE9teis_7"
+  - first:
+      213: 2084768326475055147
+    second: "Part\xEDculas e Proj\xE9teis_8"
+  - first:
+      213: 4962562845037611397
+    second: "Part\xEDculas e Proj\xE9teis_9"
+  - first:
+      213: 902760801740660000
+    second: "Part\xEDculas e Proj\xE9teis_10"
+  - first:
+      213: 4862818389139110662
+    second: "Part\xEDculas e Proj\xE9teis_11"
+  - first:
+      213: -5947657344439395655
+    second: "Part\xEDculas e Proj\xE9teis_12"
+  - first:
+      213: 4198124497394935614
+    second: "Part\xEDculas e Proj\xE9teis_13"
+  - first:
+      213: -4754077911415049249
+    second: "Part\xEDculas e Proj\xE9teis_14"
+  - first:
+      213: -7447220033635146561
+    second: "Part\xEDculas e Proj\xE9teis_15"
+  - first:
+      213: -9090012134558094016
+    second: "Part\xEDculas e Proj\xE9teis_16"
+  - first:
+      213: -6177107350507973737
+    second: "Part\xEDculas e Proj\xE9teis_17"
+  - first:
+      213: 4601263791151079724
+    second: "Part\xEDculas e Proj\xE9teis_18"
+  - first:
+      213: 5188799579559939967
+    second: "Part\xEDculas e Proj\xE9teis_19"
+  - first:
+      213: 5690637724507467460
+    second: "Part\xEDculas e Proj\xE9teis_20"
+  - first:
+      213: -2210462991447273404
+    second: "Part\xEDculas e Proj\xE9teis_21"
+  - first:
+      213: -1655726131888080418
+    second: "Part\xEDculas e Proj\xE9teis_22"
+  - first:
+      213: 6321607149067467043
+    second: "Part\xEDculas e Proj\xE9teis_23"
+  - first:
+      213: 5469306677273179644
+    second: "Part\xEDculas e Proj\xE9teis_24"
+  - first:
+      213: -4103169949511633760
+    second: "Part\xEDculas e Proj\xE9teis_25"
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 135
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Part\xEDculas e Proj\xE9teis_0"
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 255
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f77ce1fb556b9a740800000000000000
+      internalID: 5163858927151925119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Part\xEDculas e Proj\xE9teis_1"
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 254
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfe4a26f3778c0c00800000000000000
+      internalID: 868217760296619772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Part\xEDculas e Proj\xE9teis_2"
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 236
+        width: 67
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6860f8e5aa346f50800000000000000
+      internalID: 6873683415526303850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Part\xEDculas e Proj\xE9teis_3"
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 236
+        width: 66
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dbdb8fcbd1871940800000000000000
+      internalID: 5266821070312954840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Part\xEDculas e Proj\xE9teis_4"
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 191
+        width: 123
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66b878a78421af280800000000000000
+      internalID: -9008868002098607258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Part\xEDculas e Proj\xE9teis_5"
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 197
+        width: 101
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bc3637edea3e3620800000000000000
+      internalID: 2755704815458073785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Part\xEDculas e Proj\xE9teis_6"
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 264
+        width: 36
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aa6e6cafa2313760800000000000000
+      internalID: 7435780189858982561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Part\xEDculas e Proj\xE9teis_7"
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 256
+        width: 63
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97c6732ec0dd32020800000000000000
+      internalID: 2315937680803196025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Part\xEDculas e Proj\xE9teis_8"
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 212
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2008825fb59eec10800000000000000
+      internalID: 2084768326475055147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Part\xEDculas e Proj\xE9teis_9"
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 216
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 589c4026d909ed440800000000000000
+      internalID: 4962562845037611397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Part\xEDculas e Proj\xE9teis_10"
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 184
+        width: 66
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02d16e88a20478c00800000000000000
+      internalID: 902760801740660000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Part\xEDculas e Proj\xE9teis_11"
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 178
+        width: 51
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60bbfd38f833c7340800000000000000
+      internalID: 4862818389139110662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Part\xEDculas e Proj\xE9teis_12"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 114
+        width: 92
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ba52f2482da57da0800000000000000
+      internalID: -5947657344439395655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Part\xEDculas e Proj\xE9teis_13"
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 100
+        width: 112
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e37271edcfbb24a30800000000000000
+      internalID: 4198124497394935614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Part\xEDculas e Proj\xE9teis_14"
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 0
+        width: 151
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd33397e35f160eb0800000000000000
+      internalID: -4754077911415049249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Part\xEDculas e Proj\xE9teis_15"
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 91
+        width: 26
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb4210326d826a890800000000000000
+      internalID: -7447220033635146561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Part\xEDculas e Proj\xE9teis_16"
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 102
+        width: 44
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04daca3ef1ac9d180800000000000000
+      internalID: -9090012134558094016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Part\xEDculas e Proj\xE9teis_17"
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 83
+        width: 41
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7939489a791864aa0800000000000000
+      internalID: -6177107350507973737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Part\xEDculas e Proj\xE9teis_18"
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 81
+        width: 35
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c216d6d1a09fadf30800000000000000
+      internalID: 4601263791151079724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Part\xEDculas e Proj\xE9teis_19"
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 19
+        width: 71
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7fcd56e9b1520840800000000000000
+      internalID: 5188799579559939967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Part\xEDculas e Proj\xE9teis_20"
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 20
+        width: 36
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ce64b23cd439fe40800000000000000
+      internalID: 5690637724507467460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Part\xEDculas e Proj\xE9teis_21"
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 22
+        width: 23
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44053adee9bd251e0800000000000000
+      internalID: -2210462991447273404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Part\xEDculas e Proj\xE9teis_22"
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 24
+        width: 39
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed9ba7ffadda509e0800000000000000
+      internalID: -1655726131888080418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Part\xEDculas e Proj\xE9teis_23"
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 24
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3297cb1753cdab750800000000000000
+      internalID: 6321607149067467043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Part\xEDculas e Proj\xE9teis_24"
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 4
+        width: 77
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf53a820271e6eb40800000000000000
+      internalID: 5469306677273179644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Part\xEDculas e Proj\xE9teis_25"
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 7
+        width: 28
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a43d42abac9e07c0800000000000000
+      internalID: -4103169949511633760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

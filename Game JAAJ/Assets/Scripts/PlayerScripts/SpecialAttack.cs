@@ -51,7 +51,8 @@ public class SpecialAttack : MonoBehaviour
         float bSpeed = b.GetComponent<BulletScript>().speed;
         float bAngle = b.GetComponent<BulletScript>().angle;
         b.transform.rotation = Quaternion.AngleAxis(bAngle, Vector3.forward);
-        b.GetComponent<Rigidbody2D>().velocity = transform.right * bSpeed;
+        //b.GetComponent<Rigidbody2D>().velocity = transform.right * bSpeed;
+        b.GetComponent<Rigidbody2D>().velocity = (transform.right * bSpeed) + (transform.up * bAngle);
         b.transform.right = transform.right.normalized;
         anim.SetTrigger("Shoot");
     }

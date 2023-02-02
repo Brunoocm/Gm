@@ -9,6 +9,7 @@ public class UltimoBoss : MonoBehaviour
 {
     [Header("Main")]
     public int health;
+    public BoxCollider2D coll;
     public Slider slider;
     public bool isIdle;
     public bool isLava;
@@ -34,13 +35,13 @@ public class UltimoBoss : MonoBehaviour
 
     [Header("Protection")]
     public GameObject shield;
+    public ParticleSystem shieldParticle;
     public Collider2D healh;
     public int shieldHealth;
     public float timerCD;
 
     private int shieldBaseHealth;
     private float timerBaseCD;
-    //BoxCollider2D coll;
 
     private void Awake()
     {
@@ -79,16 +80,17 @@ public class UltimoBoss : MonoBehaviour
         {
             shield.SetActive(true);
             healh.enabled = false;
-            //coll.enabled = false;
+            coll.enabled = false;
+            shieldParticle.gameObject.SetActive(false);
 
         }
         else
         {
             timerCD -= Time.deltaTime;
-
+            shieldParticle.gameObject.SetActive(true);
             shield.SetActive(false);
             healh.enabled = true;
-            //coll.enabled = true;
+            coll.enabled = true;
             if (timerCD <= 0)
             {               
                 shieldHealth = shieldBaseHealth;

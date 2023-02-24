@@ -1,0 +1,249 @@
+fileFormatVersion: 2
+guid: 89a5347ca0744f245a572f2479f7f0dc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8284502515446353510
+    second: Cachoeira Lava_0
+  - first:
+      213: -5478920108523247618
+    second: Cachoeira Lava_1
+  - first:
+      213: -2483945017221057864
+    second: Cachoeira Lava_2
+  - first:
+      213: -3642607261072207978
+    second: Cachoeira Lava_3
+  - first:
+      213: -6910516790485592550
+    second: Cachoeira Lava_4
+  - first:
+      213: 5805922472195395693
+    second: Cachoeira Lava_5
+  - first:
+      213: -1997572648550918833
+    second: Cachoeira Lava_6
+  - first:
+      213: 1912636089925397799
+    second: Cachoeira Lava_7
+  - first:
+      213: 3178034859248353348
+    second: Cachoeira Lava_8
+  - first:
+      213: 7501360012777776727
+    second: Cachoeira Lava_9
+  - first:
+      213: 178379323080294219
+    second: Cachoeira Lava_10
+  - first:
+      213: 163321620356674953
+    second: Cachoeira Lava_11
+  - first:
+      213: 8512468948899844442
+    second: Cachoeira Lava_12
+  - first:
+      213: -2440401230249121744
+    second: Cachoeira Lava_13
+  - first:
+      213: 8532332973651098247
+    second: Cachoeira Lava_14
+  - first:
+      213: -8136390373653323060
+    second: Cachoeira Lava_15
+  - first:
+      213: -6281169614857411984
+    second: Cachoeira Lava_16
+  - first:
+      213: 8100870050388225213
+    second: Cachoeira Lava_17
+  - first:
+      213: -8090402545937002768
+    second: Cachoeira Lava_18
+  - first:
+      213: 9041177085150330790
+    second: Cachoeira Lava_19
+  - first:
+      213: -3410575854355594806
+    second: Cachoeira Lava_20
+  - first:
+      213: -2675809174414706570
+    second: Cachoeira Lava_21
+  - first:
+      213: -129963185132040814
+    second: Cachoeira Lava_22
+  - first:
+      213: -6602730754129454500
+    second: Cachoeira Lava_23
+  - first:
+      213: 8272096043356997390
+    second: Cachoeira Lava_24
+  - first:
+      213: -626241768547540104
+    second: Cachoeira Lava_25
+  - first:
+      213: 2229409302879768626
+    second: Cachoeira Lava_26
+  - first:
+      213: -5720341142379576276
+    second: Cachoeira Lava_27
+  - first:
+      213: 219428572071608217
+    second: Cachoeira Lava_28
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cachoeira Lava_6
+      rect:
+        serializedVersion: 2
+        x: 2388
+        y: 97
+        width: 345
+        height: 881
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f45161e72423744e0800000000000000
+      internalID: -1997572648550918833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cachoeira Lava_13
+      rect:
+        serializedVersion: 2
+        x: 5233
+        y: 478
+        width: 217
+        height: 263
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0382399c204f12ed0800000000000000
+      internalID: -2440401230249121744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

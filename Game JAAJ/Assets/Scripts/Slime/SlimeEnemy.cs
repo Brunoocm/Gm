@@ -23,7 +23,10 @@ public class SlimeEnemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
-
+    private void OnDestroy()
+    {
+        FindObjectOfType<ScriptAudioManager>().Play("MorteSlime");
+    }
     void Update()
     {
         if (enemyHealth.health <= 0)
@@ -90,6 +93,11 @@ public class SlimeEnemy : MonoBehaviour
                 isRight = true;
                 Flip();
             }
+        }
+
+        if (other.GetComponent<BulletScript>() != null)
+        {
+            FindObjectOfType<ScriptAudioManager>().Play("HitSlimePequena");
         }
 
         void Flip()

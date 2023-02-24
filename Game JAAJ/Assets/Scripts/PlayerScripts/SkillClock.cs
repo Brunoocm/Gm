@@ -71,6 +71,9 @@ public class SkillClock : MonoBehaviour
             iconeImageInverno.SetActive(false);
 
             playerAnim.runtimeAnimatorController = Outono;
+            if(timerPonteiro <= 1) FindObjectOfType<ScriptAudioManager>().Play("MudarOutono");
+
+
 
         }
         else if (timerPonteiro <= 240 && timerPonteiro >= 120)
@@ -85,6 +88,8 @@ public class SkillClock : MonoBehaviour
             iconeImageOutono.SetActive(false);
 
             playerAnim.runtimeAnimatorController = Inverno;
+            if (timerPonteiro <= 121) FindObjectOfType<ScriptAudioManager>().Play("MudarInverno");
+
         }
         else if (timerPonteiro <= 360 && timerPonteiro >= 240)
         {
@@ -99,6 +104,7 @@ public class SkillClock : MonoBehaviour
 
 
             playerAnim.runtimeAnimatorController = Primavera;
+            if (timerPonteiro <= 241) FindObjectOfType<ScriptAudioManager>().Play("MudarPrimavera");
 
         }
         //}       

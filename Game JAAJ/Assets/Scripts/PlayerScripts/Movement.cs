@@ -54,24 +54,20 @@ public class Movement : MonoBehaviour
 
         Flip();
 
-        if (playerInput.actions["Interact"].IsPressed())
-        {
-            Time.timeScale = 0.5f;
-            Time.fixedDeltaTime = 0.02F * Time.timeScale;
-        }
+        //if (playerInput.actions["Interact"].IsPressed())
+        //{
+        //    Time.timeScale = 0.5f;
+        //    Time.fixedDeltaTime = 0.02F * Time.timeScale;
+        //}
 
 
         if (rb.velocity.x != 0 && isGrounded)
         {
             walkParticle.Play();
-            print("walking");
-
         }
         else
         {
             walkParticle.Stop();
-            print("NOT walking");
-
         }
 
     }

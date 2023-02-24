@@ -36,6 +36,10 @@ public class GolemBoss : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void OnDestroy()
+    {
+        FindObjectOfType<ScriptAudioManager>().Play("MortePedra");
+    }
     void Start()
     {
         enemyHealth = GetComponent<EnemyHealth>();
@@ -160,7 +164,7 @@ public class GolemBoss : MonoBehaviour
 
         }
     }
-
+    
     public void SomSoco()
     {
         FindObjectOfType<ScriptAudioManager>().Play("soco");

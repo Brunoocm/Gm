@@ -141,7 +141,9 @@ public class UltimoBoss : MonoBehaviour
 
             if (numObj >= 0 && timerBtw <= 0)
             {
-                if(numObj < lavaObj.Length) lavaObj[numObj].SetActive(false);
+                FindObjectOfType<ScriptAudioManager>().Play("Lava");
+
+                if (numObj < lavaObj.Length) lavaObj[numObj].SetActive(false);
 
                 lavaObj[numObj-1].SetActive(true);
 
@@ -151,6 +153,7 @@ public class UltimoBoss : MonoBehaviour
             else if(numObj == 0)
             {
                 numObj = lavaObj.Length;
+                FindObjectOfType<ScriptAudioManager>().Play("Lava");
                 isLava = false;
                 timerBtw = 0;
             } 
@@ -167,6 +170,8 @@ public class UltimoBoss : MonoBehaviour
             timerChuva -= Time.deltaTime;
             if (timerChuva <= 0)
             {
+                FindObjectOfType<ScriptAudioManager>().Play("Meteoro");
+
                 int num = Random.Range(0, chuvaObj.Length);
 
                 GameObject bolaFogo = Instantiate(bullet, chuvaObj[num].position, Quaternion.identity);

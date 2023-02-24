@@ -62,18 +62,21 @@ public class BulletScript : MonoBehaviour
         if (other.GetComponent<FreezeEnemy>() != null && hasFreeze)
         {
             other.GetComponent<FreezeEnemy>().FreezeObject(freezeDuration);
+            FindObjectOfType<ScriptAudioManager>().Play("CongelarInimigo");
             particles();
             Destroy(gameObject);
         }
         if (other.gameObject.CompareTag("Shield"))
         {
             other.gameObject.transform.parent.GetComponent<UltimoBoss>().DanoShield(dano);
+            FindObjectOfType<ScriptAudioManager>().Play("HitEscudo");
             particles();
             Destroy(gameObject);
         } 
         if (other.gameObject.CompareTag("UltimoBoss"))
         {
             other.gameObject.transform.GetComponent<UltimoBoss>().Dano(dano);
+            FindObjectOfType<ScriptAudioManager>().Play("HitCristal");
             particles();
             Destroy(gameObject);
         } 

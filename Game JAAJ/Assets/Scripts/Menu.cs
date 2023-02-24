@@ -50,6 +50,10 @@ public class Menu : MonoBehaviour
         Time.timeScale = 1f;
         gamePaused = false;
     }
+    public void SoundClick(string name)
+    {
+        FindObjectOfType<ScriptAudioManager>().Play(name);
+    }
 
     public void Quit()
     {

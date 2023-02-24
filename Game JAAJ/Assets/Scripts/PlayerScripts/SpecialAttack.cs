@@ -47,6 +47,7 @@ public class SpecialAttack : MonoBehaviour
 
     public void Shoot()
     {
+        FindObjectOfType<ScriptAudioManager>().Play(SeasonAudio());
         GameObject b = Instantiate(SeasonPower(), shootPos.position, shootPos.rotation);
         float bSpeed = b.GetComponent<BulletScript>().speed;
         float bAngle = b.GetComponent<BulletScript>().angle;
@@ -70,6 +71,24 @@ public class SpecialAttack : MonoBehaviour
         else if (SkillClock.skillPrimavera)
         {
             return springPower;
+        }
+
+        return null;
+    } 
+    
+    string SeasonAudio()
+    {
+        if (SkillClock.skillInverno)
+        {
+            return "AtaqueInverno";
+        }
+        else if (SkillClock.skillOutono)
+        {
+            return "AtaqueOutono";
+        }
+        else if (SkillClock.skillPrimavera)
+        {
+            return "AtaquePrimavera";
         }
 
         return null;

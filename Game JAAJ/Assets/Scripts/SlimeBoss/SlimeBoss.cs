@@ -34,6 +34,7 @@ public class SlimeBoss : MonoBehaviour
     private float timerAirBase;
     private bool following;
     private bool isFreezed;
+    private bool oneTimeSound;
 
     EnemyHealth enemyHealth;
     GameObject ShadowObj;
@@ -109,6 +110,7 @@ public class SlimeBoss : MonoBehaviour
        
         if (idle)
         {
+            oneTimeSound = false;
             timerBetween += Time.deltaTime;
 
             if (timerBetween >= timerBetweenSet)
@@ -153,6 +155,11 @@ public class SlimeBoss : MonoBehaviour
     {
         if(jumpAttack)
         {
+            if(!oneTimeSound)
+            {
+                FindObjectOfType<ScriptAudioManager>().Play("HitSlimeAttack");
+                oneTimeSound = true;
+            }
             if (timerAir > 0)
             {
                 timerAir -= Time.deltaTime;
@@ -192,6 +199,14 @@ public class SlimeBoss : MonoBehaviour
             anim.SetBool("Attack", false);
             timerAir = timerAirBase;
 
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.GetComponent<BulletScript>() != null)
+        {
+            FindObjectOfType<ScriptAudioManager>().Play("HitSlime");
         }
     }
 }

@@ -158,7 +158,6 @@ public class PlayerHealth : MonoBehaviour
                 getHit = true;
 
                 MaterialHit();
-
             }
         }
     }
